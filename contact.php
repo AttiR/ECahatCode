@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
      <!-- Css -->
     <link rel="stylesheet" href="css/styles.css?<?php echo time(); ?>">
 
@@ -22,7 +22,7 @@
 <header>
 <?php include('view/header.php') ?>
 </header>
-<section id="feedback">
+<section id="user-form">
     <div class="contact-form">
         <h1 id="title" class="text-center" style="color: orange;">Contact Us</h1>
         <h4 class="text-center" style="margin-bottom: 40px;">We valued your Feedback</h4>
@@ -34,29 +34,24 @@
             ?>
             </p>-->
 
-        
+
             <form action="" id="feedback-form" method="post">
                 <div class="form-group">
-                    <label id="name-label" for="name">First Name</label>
                     <input type="text" name="f-name" id="f-name" class="form-control" placeholder="Enter your first name" required />
                 </div>
                 <div class="form-group">
-                    <label id="name-label" for="name">Last Name</label>
                     <input type="text" name="l-name" id="l-name" class="form-control" placeholder="Enter your last name" required />
                 </div>
                 <div class="form-group">
-                    <label id="email-label" for="email">Email</label>
                     <input type="email" name="email" id="email" class="form-control" placeholder="Enter your Email" required />
                 </div>
                 <div class="form-group">
-                    <label id="number-label" for="number">Age<span class="clue">(optional)</span></label>
                     <input type="number" name="age" id="age" min="10" max="99" class="form-control" placeholder="Age" />
                 </div>
 
 
 
                 <div class="form-group">
-                    <p>Any comments or suggestions?</p>
                     <textarea name="comments" id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
                 </div>
 
@@ -65,7 +60,7 @@
                     Submit
                     </button>
                 </div>
-            </form>    
+            </form>
     </div>
 </section>
 
@@ -74,7 +69,7 @@
 
         <div class="contact-information" style="margin-left: 175px;">
 
-            <h2 style="color: orange;">Contact Information</h2> 
+            <h2 style="color: orange;">Contact Information</h2>
             <p>Adress: Helsinki 234X <br> P.O.Box xx34 <br>  Finland
             <br> Email: chatcodee@gmail.com <br>Cell: +3584324xxx2
             </p>
@@ -90,6 +85,6 @@
 
 
 <?php include('view/footer.php') ?>
-    
+
 </body>
 </html>

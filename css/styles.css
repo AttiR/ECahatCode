@@ -59,8 +59,7 @@ span {
 }
 
 /* INTRO SECTION */
-/* INTRO SECTION */
-/* INTRO SECTION */
+
 .intro-section {
   position: relative;
   width: 100%;
@@ -187,11 +186,6 @@ button {
   }
 }
 
-.header {
-  padding: 0 0.625rem;
-  margin-bottom: 1.875rem;
-}
-
 .description {
   font-style: italic;
   font-weight: 200;
@@ -208,10 +202,11 @@ button {
   text-align: center;
 }
 
-/* form */
+/* Feedback Form */
 
 #feedback-form {
-  background: rgba(194, 151, 72, 0.3);
+  background: rgba(231, 231, 241, 0.1);
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   padding: 2.5rem;
   border-radius: 0.25rem;
 }
@@ -267,21 +262,77 @@ button {
   color: rgb(36, 230, 117);
 }
 
+/* Sign Up , Login, Password Recover */
+
+#user-form::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: black;
+  background-image: linear-gradient(115deg, #b6b6d6a9, rgba(37, 37, 78, 0.7)),
+    url(https://media-s3-us-east-1.ceros.com/hcl-software/images/2020/09/17/b0dd9638bfc2fd2be7bb1f13fe17d177/factory-tour-digital-week-singup.png?imageOpt=1&crop=498,310,x341,y0);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user-img {
+  width: 150px;
+  height: 150px;
+  margin-top: -80px;
+  margin-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: 100%;
+  background: transparent;
+}
+.user-info,
+.vertical-center {
+  width: 100%;
+  height: 100%;
+}
+.vertical-center {
+  display: flex;
+  text-align: left;
+  justify-content: center;
+  flex-direction: column;
+}
+.enter-form {
+  width: 450px;
+  margin: 100px auto;
+  background: rgba(231, 231, 241, 0.1);
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 40px 55px 45px 55px;
+  transition: all 0.3s;
+  border-radius: 20px;
+}
+.user-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--color-orange);
+  color: inherit;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  color: var(--white);
+}
+
 /* Footer Section */
 
 #footer-div {
   max-width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
   grid-template-rows: 1fr;
-
   grid-gap: 10px;
-
   justify-items: center;
-
   align-items: center;
-
   background-color: grey;
 }
 .footer {
@@ -289,12 +340,11 @@ button {
   width: 300px;
   justify-items: start;
   align-items: center;
-
-  color: #fff;
+  color: var(--white);
   padding: 1rem;
 }
 #footer-div p {
-  color: #fff;
+  color: var(--white);
 }
 #footer-div h3 {
   color: var(--color-primary);
@@ -306,13 +356,12 @@ button {
   color: var(--color-secondary);
   cursor: pointer;
 }
-
 #footer-logo h1 span {
   color: var(--color-primary);
 }
 .footer a {
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
 }
 .footer a:hover {
   color: rgb(35, 90, 116);
@@ -335,8 +384,6 @@ button {
     font-size: 4rem;
   }
 }
-
-/* Contact Us Section */
 
 /* Mobile */
 
