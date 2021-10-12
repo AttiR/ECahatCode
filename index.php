@@ -26,26 +26,25 @@
   <section class="intro-section">
     <div class="container intro-content">
       <div class="intro-text">
-        <h1 class="u-mb-small"> <span class="first-span">Welcome to ChatCodeE </span>
+        <h1 class="u-mb-small"> <span class="first-span">Welcome to ChatCodeE</span>
           For
           <span class="second-span"></span>
         </h1>
         <p class="u-mb-large text-white">
-          Share Your ideas, coding problems. Help the community to grow along.
+          Sahre your Ideas, ask questions and helps the community to grow. There are different coding categories to explore:
+            Python, JavaScript, PHP .....
         </p>
-        
+        <a href="#" class="btn">Get a quote</a>
       </div>
     </div>
 
     <div class="video-container">
       <div class="video-overlay"></div>
       <video autoplay loop muted>
-        <source src="./view/Design-large.mp4" type="video/mp4">
+        <source src="view/Design-large.mp4" type="video/mp4">
       </video>
     </div>
   </section>
-
-  <!-- Categories section -->
   
   
   <section class="categories">
