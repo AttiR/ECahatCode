@@ -20,7 +20,7 @@
 </head>
 <body>
   
-<?php include('./view/dbcon.php');?>
+<?php include('./config/dbcon.php');?>
 <?php include('./view/header.php') ?>
 
 
