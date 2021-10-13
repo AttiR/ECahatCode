@@ -23,20 +23,29 @@
 <?php include('view/header.php') ?>
 </header>
 <section id="user-form">
-    <div class="contact-form">
-        <h1 id="title" class="text-center" style="color: orange;">Contact Us</h1>
-        <h4 class="text-center" style="margin-bottom: 40px;">We valued your Feedback</h4>
-        <!-- <p id="description" class="description text-center">
-            <?php
+
+<center>
+    <div style="width: 50%; margin:30px auto 30px auto">
+    <h1 id="title" class="text-center" style="color: orange;">Contact Us</h1>
+    <h4 class="text-center" style="margin-bottom: 40px;">We valued your Feedback</h4>
+     <!-- <p id="description" class="description text-center">
+     <?php
                 if ($insert == true) {
                 echo "<p class='submitMsg'>Thanks for submitting your Feedback. We valued your opinion!</p>";
                 }
             ?>
             </p>-->
-
+    </div>
+    
+</center>
+    <div class="contact-form">
+        
+       
+           
 
             <form action="" id="feedback-form" method="post">
-                <div class="form-group">
+            <img class="user-img" src="https://miro.medium.com/max/400/1*3dCx6otO8CKqWVyPjCURFw.png" alt="image">
+                <div class="form-group" id="first-name">
                     <input type="text" name="f-name" id="f-name" class="form-control" placeholder="Enter your first name" required />
                 </div>
                 <div class="form-group">
@@ -64,25 +73,20 @@
     </div>
 </section>
 
-<section id="contact-info">
-   <div class="container">
 
-        <div class="contact-information" style="margin-left: 175px;">
+   
+    
+        <div class="vertical-center">
+            <div class="enter-form"> 
 
             <h2 style="color: orange;">Contact Information</h2>
-            <p>Adress: Helsinki 234X <br> P.O.Box xx34 <br>  Finland
+            <p style="color: #fff;">Adress: Helsinki 234X <br> P.O.Box xx34 <br>  Finland
             <br> Email: chatcodee@gmail.com <br>Cell: +3584324xxx2
             </p>
 
+            </div>
+
         </div>
-
-
-   </div>
-
-</section>
-
-
-
 
 <?php include('view/footer.php') ?>
 

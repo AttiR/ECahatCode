@@ -21,7 +21,8 @@
 <body>
   
 <?php include('./config/dbcon.php');?>
-<?php include('./view/header.php') ?>
+<header><?php include('./view/header.php') ?></header>
+
 
 
   <!-- INTRO SECTION -->
