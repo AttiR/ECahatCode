@@ -32,8 +32,19 @@ include '../config/dbcon.php';
 ?>
     <header>
         <?php include '../view/header.php';?></header>
+
+
+
+
+
+
+
+
     <?php include '../view/footer.php';
 ?>
+
+
+
 </body>
 
 </html>
