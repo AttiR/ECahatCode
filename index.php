@@ -44,7 +44,7 @@
                     categories to explore:
                     Python, JavaScript, PHP .....
                 </p>
-                <a href="#" class="btn">Get a quote</a>
+
             </div>
         </div>
 
