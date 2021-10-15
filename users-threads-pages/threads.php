@@ -53,10 +53,10 @@ if (isset($_GET['categryid'])) {
         <!-- Jumbotron Bootsrap 5-->
         <div class="container" style="width: 80%;">
             <div class="bg-light p-5 rounded-lg m-3">
-                <h1 class="display-4" style="color:#e87c1e">
+                <h1 class="my-4">
                     <?php echo $categoryname ?> Forum</h1>
                 <!-- displaying data dynamically-->
-                <p class="lead">
+                <p class=" lead">
                     <?php echo $categorydesc ?> </p>
                 <!-- displaying data dynamicaaly -->
                 <hr class="my-4">
@@ -72,21 +72,49 @@ if (isset($_GET['categryid'])) {
 
         </div>
 
+        <!--We will create a  form to get question and idea from user and will store info in table coding-threads-->
+
+
+
         <!-- User Questions, Ideas, tech information--->
 
+        <div class="container" style="width:80%">
+            <h2 class="my-5" style="margin-left: 15px;">Start New Conversation</h2>
+            <div div class="bg-light p-5 rounded-lg m-3">
+                <form action="">
+                    <div class="mb-3">
+                        <label class="form-label">Thread Title</label>
+                        <input type="text" name="title" id="title" class="form-control"
+                            placeholder="enter precise title">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Explain your Thread</label>
+                        <textarea class="form-control" id="description" rows="3"></textarea>
+                    </div>
+
+
+                    <button style=" background: orange; margin-top: 15px; color:#fff" type="button"
+                        class="btn btn-lg">Submit</button>
+                </form>
+
+            </div>
+
+        </div>
 
         <!-----Fetching data from coding-threads---->
         <div class="container" style="width: 80%;">
-            <h1 style="text-align: center; color:#e87c1e">Browse threads</h1>
-            <div div class="bg-light p-5 rounded-lg m-3">
+            <h2 class="my-5" style="margin-left:15px;">Browse Threads</h2>
+            <div div class=" bg-light p-5 rounded-lg m-3">
                 <?php
 $categoryid = $_GET['categryid'];
 $categoryid = mysqli_real_escape_string($connect, $categoryid);
 // fetching by id where id = category id selected by the user
+$result = false;
 $sql = "SELECT * FROM `coding_threads` WHERE `code_thread_id` = $categoryid";
 $query = mysqli_query($connect, $sql);
 while ($row = mysqli_fetch_assoc($query)) {
 
+    $result = true;
     $codethreadid = $row['code_thread_id'];
     $codethreaddesc = $row['code_thread_desc'];
     $codethreadtitle = $row['code_thread_title'];
@@ -118,11 +146,21 @@ while ($row = mysqli_fetch_assoc($query)) {
                 </div>';
 }
 $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli_error($connect));
+if (!$result) {
+    echo "<h1>No Threads found</h1>
+    <p>You can start to ask any Question/idea.</p>"; // it means when there are no questions/reviews this  should b displaed to user
+    // User can start asking questions through the form.
+
+}
+
 ?>
 
 
             </div>
         </div>
+
+
+
     </section>
 
 
