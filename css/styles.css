@@ -273,7 +273,7 @@ button {
   z-index: -1;
   background: black;
   background-image: linear-gradient(115deg, #b6b6d6a9, rgba(37, 37, 78, 0.7)),
-    url(https://media-s3-us-east-1.ceros.com/hcl-software/images/2020/09/17/b0dd9638bfc2fd2be7bb1f13fe17d177/factory-tour-digital-week-singup.png?imageOpt=1&crop=498,310,x341,y0);
+    url(https://starbic.com/wp-content/uploads/2019/01/cyber_security.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -304,8 +304,8 @@ button {
 .enter-form {
   width: 450px;
   margin: 100px auto;
-  background: rgba(231, 231, 241, 0.1);
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  background: rgba(231, 231, 241, 0.5);
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.4);
   padding: 40px 55px 45px 55px;
   transition: all 0.3s;
   border-radius: 20px;
