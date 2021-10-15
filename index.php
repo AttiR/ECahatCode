@@ -51,7 +51,7 @@
         <div class="video-container">
             <div class="video-overlay"></div>
             <video autoplay loop muted>
-                <source src="view/Design-large.mp4" type="video/mp4">
+                <source src="./view/Design-large.mp4" type="video/mp4">
             </video>
         </div>
     </section>
@@ -59,7 +59,7 @@
     <!-- Categories -->
 
     <section class="categories">
-        <h2 class="text-center my-3">Explore Categories</h2>
+        <h2 class="text-center my-3" style="color:#e87c1e;">Explore Web-Coding Categories</h2>
 
 
         <div class="container">
@@ -68,7 +68,7 @@
                 <!-- Fetch Gategories form Database-->
 
                 <?php
-$sql = "SELECT * FROM `Code_Categories`";
+$sql = "SELECT * FROM `code_categories`";
 $query = mysqli_query($connect, $sql);
 // while loop to ftech all categories
 while ($result = mysqli_fetch_assoc($query)) {
@@ -82,15 +82,16 @@ while ($result = mysqli_fetch_assoc($query)) {
                     <div class="card my-3" >
                         <img src="https://source.unsplash.com/500x400/?' . $category . ' ,coding" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title"> <a href= "users-threads-pages/threads.php?categryid=  ' . $categoryid . ' "> ' . $category . ' </a> </h5>
-                            <p class="card-text">' . substr($description, 0, 100) . '.....</p>
-                            <a href="users-threads-pages/threads.php?categryid=  ' . $categoryid . ' " class="btn btn-primary">Explore category</a>
+                            <h5 class="card-title"> <a class= "text-dark my-3" style="text-decoration:none; letter-spacing:2px" href= "users-threads-pages/threads.php?categryid=  ' . $categoryid . ' "> ' . $category . ' </a> </h5>
+                            <p class="card-text" style="text-align:justify">' . substr($description, 0, 100) . '.....</p>
+                            <a style= "background:orange; color:#fff" href="users-threads-pages/threads.php?categryid=  ' . $categoryid . ' " class="btn">Explore category</a>
                         </div>
                     </div>
                 </div>';
     // substring operation to reduce the string to a specific limit subtsr()
     // fetch category-id, name and description
 }
+$result = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli_error($connect));
 
 ?>
 

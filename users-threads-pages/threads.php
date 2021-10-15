@@ -35,7 +35,7 @@ if (isset($_GET['categryid'])) {
 
     $categoryid = $_GET['categryid'];
     $categoryid = mysqli_real_escape_string($connect, $categoryid);
-    $sql = "SELECT * FROM `Code_Categories` WHERE `code-category_id` = $categoryid";
+    $sql = "SELECT * FROM `code_categories` WHERE `code-category_id` = $categoryid";
     $query = mysqli_query($connect, $sql);
     while ($row = mysqli_fetch_assoc($query)) {
 
@@ -53,7 +53,7 @@ if (isset($_GET['categryid'])) {
         <!-- Jumbotron Bootsrap 5-->
         <div class="container" style="width: 80%;">
             <div class="bg-light p-5 rounded-lg m-3">
-                <h1 class="display-4" style="color:orange">
+                <h1 class="display-4" style="color:#e87c1e">
                     <?php echo $categoryname ?> Forum</h1>
                 <!-- displaying data dynamically-->
                 <p class="lead">
@@ -66,7 +66,8 @@ if (isset($_GET['categryid'])) {
                     not cross
                     post questions. Remain respectful of other members at all times.
                 </p>
-                <a class="btn btn-success btn-lg" href="#" role="button">Learn more</a>
+                <a style="background:orange; color:#fff" class="btn btn-lg" href="./about.php" role="button">Learn
+                    more</a>
             </div>
 
         </div>
@@ -76,7 +77,7 @@ if (isset($_GET['categryid'])) {
 
         <!-----Fetching data from coding-threads---->
         <div class="container" style="width: 80%;">
-            <h1 style="text-align: center; color:orange">Browse threads</h1>
+            <h1 style="text-align: center; color:#e87c1e">Browse threads</h1>
             <div div class="bg-light p-5 rounded-lg m-3">
                 <?php
 $categoryid = $_GET['categryid'];
@@ -107,7 +108,7 @@ while ($row = mysqli_fetch_assoc($query)) {
                     <!-- Body -->
                     <div>
                         <h5 class="fw-bold">
-                           <a href="users-threads-pages/thread.php" class="text-dark"> ' . $codethreadtitle . '</a>
+                           <a style= "text-decoration:none" href="thread-detail.php" class="text-dark"> ' . $codethreadtitle . '</a>
                             <small class="text-muted">' . $dayandtime . '</small>
                         </h5>
                         <p>
