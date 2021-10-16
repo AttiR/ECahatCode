@@ -107,10 +107,10 @@ if ($method == "POST") {
 
             <div div class="bg-light p-5 rounded-lg m-3">
                 <?php
-                    if ($insert == true) {
-                    echo "<p style= 'color: green'> your thread has been sucessfully started</p>";
-                    }
-                ?>
+if ($insert == true) {
+    echo "<p style= 'color: green'> your thread has been sucessfully started</p>";
+}
+?>
                 <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
                     <!-- getting post on same page or where u require-->
                     <div class="mb-3">
@@ -124,8 +124,9 @@ if ($method == "POST") {
                     </div>
 
 
-                    <button type="submit" style=" background: orange; margin-top: 15px;"
-                        class="btn btn-lg">Submit</button>
+                    <button type="submit" style=" background: orange; margin-top: 15px; color:#fff"
+                        class="btn btn-lg">Start
+                        Thread</button>
                 </form>
 
             </div>
@@ -161,8 +162,9 @@ if (isset($_GET['categryid'])) {
                       Vn2JcU6dBBwVBdJ2MnI5hx+aKpfUcFw7AwTJ5f6ifqfGpOTWcNHcCcuFLapTpYRUWl5wq6yR8FXc2jOSoNhq7vgZlh4PoO2BFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/+m+4X/C8aeGQJJLlwAAAABJRU5ErkJggg==" alt="John Doe"
                      class=" me-3  rounded-circle" style="width:60px;height:60px;">
                  <div>
-                     <h5 class = "fw-bold"> <a href= "thread-detail.php?threadid= ' . $thread_id . '">' . $threadname . ' </a><small class = "text-muted">' . $time_date . '</small></h5>
-                     <p>' . $threaddesc . '</p><p>' . $threadid . '</p>
+                     <h5 class = "fw-bold"> <a class= "text-dark" style="text-decoration:none;" href= "thread-detail.php?threadid= ' . $thread_id . '">' . $threadname . ' </a>
+                     <small class = "text-muted" style= "padding: auto 40px">' . $time_date . '</small></h5>
+                     <p>' . $threaddesc . '</p>
                  </div>
              </div>
          </div> ';
@@ -171,7 +173,7 @@ if (isset($_GET['categryid'])) {
         echo '<div class=" bg-light p-5 rounded-lg m-3">
 
 <h2>No Thread Found</h2><br>
-<p>Start a New Thread</p>       
+<p>Start a New Thread</p>
              </div>
              ';
     }
