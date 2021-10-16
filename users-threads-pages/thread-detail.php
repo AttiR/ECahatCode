@@ -27,24 +27,68 @@
 </head>
 
 <body>
+
+
     <?php
 include '../config/dbcon.php';
-?>
-    <header>
+?> <header>
         <?php include '../view/header.php';?></header>
 
+    <section>
+
+        <!------------------- we will deal with a particulat thread id, we will fetch threadid from
+        $_GET['threadid']----------------------->
+        <!--- Lets fetch threadid and display it----->
+        <?php
+$insert = false;
+$id = $_GET['threadid'];
+// getting 'categryid' via $_GET user clicks on explore more and we get id
+
+$id = mysqli_real_escape_string($connect, $id);
+$sql = "SELECT * FROM `coding_threads` WHERE `code_thread_id` = $id";
+$query = mysqli_query($connect,
+    $sql);
+while ($row = mysqli_fetch_assoc($query)) {
+    $threadtitle = $row['code_thread_title'];
+    $threaddesc = $row['code_thread_desc']; // this data will be used to show values according to the id
+
+    echo '
+    <!-- Jumbotron Bootsrap 5  for the particular thread id intro and lead-->
+    <div class="container" style="width: 80%;">
+            <div class="bg-light p-5 rounded-lg m-3">
+                <h1 class="my-4">' . $threadtitle . '
+                </h1>
+                <!-- displaying data dynamically-->
+                <p class=" lead">
+                </p>' . $threaddesc . '
+                <!-- displaying data dynamicaaly -->
+                <hr class="my-4">
+                <p>This is a peer to peer code chat forum. No Spam / Advertising / Self-promote in the forums is not
+                    allowed. Do
+                    not post copyright-infringing material. Do not post “offensive” posts, links or images. Do
+                    not cross
+                    post questions. Remain respectful of other members at all times.
+                </p>
 
 
+            </div>
 
+        </div>
 
+';
+}
+$row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli_error($connect));
 
-
-
-    <?php include '../view/footer.php';
 ?>
 
 
 
+
+
+
+
+    </section>
+    <?php include '../view/footer.php';?>
 </body>
 
 </html>

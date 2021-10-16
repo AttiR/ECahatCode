@@ -58,12 +58,12 @@
 
     <!-- Categories -->
 
-    <section class="categories">
+    <section>
         <h2 class="text-center my-3" style="color:#e87c1e;">Explore Web-Coding Categories</h2>
 
 
-        <div class="container">
-            <div class="row my-4">
+        <div class="container" style="width:90%">
+            <div class="row ">
 
                 <!-- Fetch Gategories form Database-->
 
@@ -78,7 +78,7 @@ while ($result = mysqli_fetch_assoc($query)) {
     $description = $result['code-category_description'];
 
     echo '
-          <div class="category-box col-md-4">
+                <div class= "col-md-4">
                     <div class="card my-3" >
                         <img src="https://source.unsplash.com/500x400/?' . $category . ' ,coding" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -87,7 +87,8 @@ while ($result = mysqli_fetch_assoc($query)) {
                             <a style= "background:orange; color:#fff" href="users-threads-pages/threads.php?categryid=  ' . $categoryid . ' " class="btn">Explore category</a>
                         </div>
                     </div>
-                </div>';
+            </div>
+            ';
     // substring operation to reduce the string to a specific limit subtsr()
     // fetch category-id, name and description
 }
