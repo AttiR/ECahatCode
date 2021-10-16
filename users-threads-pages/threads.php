@@ -27,7 +27,6 @@
 
     <?php include '../config/dbcon.php';?>
     <header><?php include '../view/header.php'?></header>
-
     <?php
 
 // fetching the data from a particular category , the category id passed from index.php
@@ -108,10 +107,10 @@ if ($method == "POST") {
 
             <div div class="bg-light p-5 rounded-lg m-3">
                 <?php
-if ($insert == true) {
-    echo "<p style= 'color: green'> your thread has been sucessfully started</p>";
-}
-?>
+                    if ($insert == true) {
+                    echo "<p style= 'color: green'> your thread has been sucessfully started</p>";
+                    }
+                ?>
                 <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
                     <!-- getting post on same page or where u require-->
                     <div class="mb-3">
@@ -172,7 +171,7 @@ if (isset($_GET['categryid'])) {
         echo '<div class=" bg-light p-5 rounded-lg m-3">
 
 <h2>No Thread Found</h2><br>
-<p>Start a New Thread</p>
+<p>Start a New Thread</p>       
              </div>
              ';
     }
