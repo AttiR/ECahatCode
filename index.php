@@ -51,23 +51,23 @@
         <div class="video-container">
             <div class="video-overlay"></div>
             <video autoplay loop muted>
-                <source src="./view/Design-large.mp4" type="video/mp4">
+                <source src="./view/images/Design-large.mp4" type="video/mp4">
             </video>
         </div>
     </section>
 
     <!-- Categories -->
 
-    <section>
-        <h2 class="text-center my-3" style="color:#e87c1e;">Explore Web-Coding Categories</h2>
+
+    <h2 class="text-center my-5" style="color:#e87c1e;">Explore Web-Coding Categories</h2>
 
 
-        <div class="container" style="width:90%">
-            <div class="row ">
+    <div class="container-fluid" style="width:90%;margin-bottom:40px">
+        <div class="row ">
 
-                <!-- Fetch Gategories form Database-->
+            <!-- Fetch Gategories form Database-->
 
-                <?php
+            <?php
 $sql = "SELECT * FROM `code_categories`";
 $query = mysqli_query($connect, $sql);
 // while loop to ftech all categories
@@ -79,7 +79,7 @@ while ($result = mysqli_fetch_assoc($query)) {
 
     echo '
                 <div class= "col-md-4">
-                    <div class="card my-3" >
+                    <div class="card my-3 mx-3" >
                         <img src="https://source.unsplash.com/500x400/?' . $category . ' ,coding" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"> <a class= "text-dark my-3" style="text-decoration:none; letter-spacing:2px" href= "users-threads-pages/threads.php?categryid=  ' . $categoryid . ' "> ' . $category . ' </a> </h5>
@@ -96,9 +96,9 @@ $result = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mys
 
 ?>
 
-            </div>
         </div>
-    </section>
+    </div>
+
 
     <?php include 'view/footer.php'?>
 

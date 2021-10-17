@@ -65,7 +65,7 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
                     not cross
                     post questions. Remain respectful of other members at all times.
                 </p>
-                <a style="background:orange; color:#fff" class="btn btn-lg" href="./about.php" role="button">Learn
+                <a style="background:orange; color:#fff" class="btn btn-lg" href="../about.php" role="button">Learn
                     more</a>
             </div>
 
