@@ -45,7 +45,7 @@ $id = $_GET['threadid'];
 // getting 'categryid' via $_GET user clicks on explore more and we get id
 
 $id = mysqli_real_escape_string($connect, $id);
-$sql = "SELECT * FROM `coding_threads` WHERE `code_thread_id` = $id";
+$sql = "SELECT * FROM `code_threads` WHERE `code_thread_id` = $id";
 $query = mysqli_query($connect,
     $sql);
 while ($row = mysqli_fetch_assoc($query)) {

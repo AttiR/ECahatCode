@@ -81,7 +81,7 @@ if ($method == "POST") {
     $thread_title = $_POST['title'];
     $thread_desc = $_POST['desc'];
 
-    $sql = "INSERT INTO coding_threads (code_thread_title, code_thread_desc, code_thread_cat_id, code_thread_user_id, timestamp)
+    $sql = "INSERT INTO code_threads (code_thread_title, code_thread_desc, code-category_id, code_thread_user_id, timestamp)
     VALUES ('$thread_title', '$thread_desc', '$categoryid', '0', current_timestamp())";
     if ($connect->query($sql) == true) {
         // echo "Successfully inserted";
@@ -143,7 +143,7 @@ if (isset($_GET['categryid'])) {
     $categoryid = $_GET['categryid'];
     $nothread = true;
 
-    $sql = "SELECT * FROM `coding_threads` WHERE `code_thread_cat_id` = $categoryid";
+    $sql = "SELECT * FROM `code_threads` WHERE `code-category_id` = $categoryid";
     $query = mysqli_query($connect, $sql);
     while ($row = mysqli_fetch_assoc($query)) {
 
