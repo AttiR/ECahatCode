@@ -132,8 +132,11 @@ if ($insert == true) {
                     </div>
 
 
-                    <button type="submit" style=" background: orange; margin-top: 15px;" class="btn btn-lg">Add
+                    <button type="submit" style=" background: orange; margin-top: 15px;color:#fff"
+                        class="btn btn-lg">Add
                         Comment</button>
+
+
                 </form>
 
 
@@ -176,8 +179,8 @@ while ($row = mysqli_fetch_assoc($query)) {
 if ($nothread) {
     echo '<div class=" bg-light p-5 rounded-lg m-3">
 
-            <h2>No Thread Found</h2><br>
-            <p>Start a New Thread</p>
+            <h2>No Comments Yet</h2><br>
+            <p>Comment on the Thread</p>
                         </div>
                         ';
 }

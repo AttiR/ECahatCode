@@ -33,12 +33,12 @@
 $insert = false;
 $categoryid = $_GET['categryid']; // getting 'categryid' via $_GET user clicks on explore more and we get id
 $categoryid = mysqli_real_escape_string($connect, $categoryid);
-$sql = "SELECT * FROM `code_categories` WHERE `code-category_id` = $categoryid";
+$sql = "SELECT * FROM `code_categories` WHERE `code_category_id` = $categoryid";
 $query = mysqli_query($connect, $sql);
 while ($row = mysqli_fetch_assoc($query)) {
 
-    $categoryname = $row['code-category_name'];
-    $categorydesc = $row['code-category_description']; // this data will be used to show values according to the id
+    $categoryname = $row['code_category_name'];
+    $categorydesc = $row['code_category_description']; // this data will be used to show values according to the id
 
 }
 $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli_error($connect));
@@ -81,7 +81,7 @@ if ($method == "POST") {
     $thread_title = $_POST['title'];
     $thread_desc = $_POST['desc'];
 
-    $sql = "INSERT INTO code_threads (code_thread_title, code_thread_desc, code-category_id, code_thread_user_id, timestamp)
+    $sql = "INSERT INTO code_threads (code_thread_title, code_thread_desc, code_category_id, code_thread_user_id, timestamp)
     VALUES ('$thread_title', '$thread_desc', '$categoryid', '0', current_timestamp())";
     if ($connect->query($sql) == true) {
         // echo "Successfully inserted";
@@ -123,10 +123,24 @@ if ($insert == true) {
                         <textarea class="form-control" id="desc" name="desc" rows="3" required></textarea>
                     </div>
 
+                    <p style="margin: 20px auto;">Sign in to start thread<a href="../login.php"
+                            style="text-decoration:none">
+                            <small style="color: orange;">
+                                click here</small> </a>
+                    </p>
+                    <p>Dont have account, Register<a href="../signup.php" style="text-decoration:none">
+                            <small style="color: orange;">
+                                click here</small> </a>
+                    </p>
+                    <button type="submit" style=" background: orange; margin-top: 13px; color:#fff"
+                        class="btn btn-lg">Start Thread</button>
 
-                    <button type="submit" style=" background: orange; margin-top: 15px; color:#fff"
-                        class="btn btn-lg">Start
-                        Thread</button>
+
+
+
+
+
+
                 </form>
 
             </div>
@@ -143,7 +157,7 @@ if (isset($_GET['categryid'])) {
     $categoryid = $_GET['categryid'];
     $nothread = true;
 
-    $sql = "SELECT * FROM `code_threads` WHERE `code-category_id` = $categoryid";
+    $sql = "SELECT * FROM `code_threads` WHERE `code_category_id` = $categoryid";
     $query = mysqli_query($connect, $sql);
     while ($row = mysqli_fetch_assoc($query)) {
 

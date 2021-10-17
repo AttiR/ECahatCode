@@ -73,9 +73,9 @@ $query = mysqli_query($connect, $sql);
 // while loop to ftech all categories
 while ($result = mysqli_fetch_assoc($query)) {
 
-    $category = $result['code-category_name'];
-    $categoryid = $result['code-category_id'];
-    $description = $result['code-category_description'];
+    $category = $result['code_category_name'];
+    $categoryid = $result['code_category_id'];
+    $description = $result['code_category_description'];
 
     echo '
                 <div class= "col-md-4">
