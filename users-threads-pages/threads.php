@@ -1,33 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Css -->
-    <link rel="stylesheet" href="../css/styles.css?<?php echo time(); ?>">
-
-    <!-- Bootsrap Css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <!-- Bootsrap JavaScript Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-
-    <!-- Fontawsome -->
-    <script src="https://kit.fontawesome.com/d54712eab9.js" crossorigin="anonymous"></script>
-    <title>ChatCodeE- codeDisscuss</title>
-</head>
-
-<body>
-
-    <?php include '../config/dbcon.php';?>
-    <header><?php include '../view/header.php'?></header>
-    <?php
+<?php include '../config/dbcon.php';?>
+<header><?php include '../view/header.php'?></header>
+<?php
 
 // fetching the data from a particular category , the category id passed from index.php
 $insert = false;
@@ -46,35 +19,35 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
 ?>
 
 
-    <section>
+<section>
 
 
-        <!-- Jumbotron Bootsrap 5  for category intro and lead-->
-        <div class="container" style="width: 80%;">
-            <div class="bg-light p-5 rounded-lg m-3">
-                <h1 class="my-4">
-                    <?php echo $categoryname ?> Forum</h1>
-                <!-- displaying data dynamically-->
-                <p class=" lead">
-                    <?php echo $categorydesc ?> </p>
-                <!-- displaying data dynamicaaly -->
-                <hr class="my-4">
-                <p>This is a peer to peer code chat forum. No Spam / Advertising / Self-promote in the forums is not
-                    allowed. Do
-                    not post copyright-infringing material. Do not post “offensive” posts, links or images. Do
-                    not cross
-                    post questions. Remain respectful of other members at all times.
-                </p>
-                <a style="background:orange; color:#fff" class="btn btn-lg" href="../about.php" role="button">Learn
-                    more</a>
-            </div>
-
+    <!-- Jumbotron Bootsrap 5  for category intro and lead-->
+    <div class="container" style="width: 80%;">
+        <div class="bg-light p-5 rounded-lg m-3">
+            <h1 class="my-4">
+                <?php echo $categoryname ?> Forum</h1>
+            <!-- displaying data dynamically-->
+            <p class=" lead">
+                <?php echo $categorydesc ?> </p>
+            <!-- displaying data dynamicaaly -->
+            <hr class="my-4">
+            <p>This is a peer to peer code chat forum. No Spam / Advertising / Self-promote in the forums is not
+                allowed. Do
+                not post copyright-infringing material. Do not post “offensive” posts, links or images. Do
+                not cross
+                post questions. Remain respectful of other members at all times.
+            </p>
+            <a style="background:orange; color:#fff" class="btn btn-lg" href="../about.php" role="button">Learn
+                more</a>
         </div>
 
+    </div>
 
-        <!--Detecing Request type in phpt-->
 
-        <?php $method = $_SERVER['REQUEST_METHOD'];
+    <!--Detecing Request type in phpt-->
+
+    <?php $method = $_SERVER['REQUEST_METHOD'];
 if ($method == "POST") {
 
     // we will insert question/ information in codethreads table
@@ -95,64 +68,64 @@ if ($method == "POST") {
 }
 ?>
 
-        <!--We will create a  form to get question and idea from user and will store info in table coding-threads-->
+    <!--We will create a  form to get question and idea from user and will store info in table coding-threads-->
 
 
 
-        <!-- User Questions, Ideas, tech information--->
-        <!------------- form for getting the questions and information from the users-------------------->
+    <!-- User Questions, Ideas, tech information--->
+    <!------------- form for getting the questions and information from the users-------------------->
 
-        <div class="container" style="width:80%">
-            <h2 class="my-5" style="margin-left: 15px;">Start New Conversation</h2>
+    <div class="container" style="width:80%">
+        <h2 class="my-5" style="margin-left: 15px;">Start New Conversation</h2>
 
-            <div div class="bg-light p-5 rounded-lg m-3">
-                <?php
+        <div div class="bg-light p-5 rounded-lg m-3">
+            <?php
 if ($insert == true) {
     echo "<p style= 'color: green'> your thread has been sucessfully started</p>";
 }
 ?>
-                <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
-                    <!-- getting post on same page or where u require-->
-                    <div class="mb-3">
-                        <label class="form-label">Thread Title</label>
-                        <input type="text" name="title" id="title" class="form-control"
-                            placeholder="enter precise title" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Explain your Thread</label>
-                        <textarea class="form-control" id="desc" name="desc" rows="3" required></textarea>
-                    </div>
+            <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
+                <!-- getting post on same page or where u require-->
+                <div class="mb-3">
+                    <label class="form-label">Thread Title</label>
+                    <input type="text" name="title" id="title" class="form-control" placeholder="enter precise title"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Explain your Thread</label>
+                    <textarea class="form-control" id="desc" name="desc" rows="3" required></textarea>
+                </div>
 
-                    <p style="margin: 20px auto;">Sign in to start thread<a href="../login.php"
-                            style="text-decoration:none">
-                            <small style="color: orange;">
-                                click here</small> </a>
-                    </p>
-                    <p>Dont have account, Register<a href="../signup.php" style="text-decoration:none">
-                            <small style="color: orange;">
-                                click here</small> </a>
-                    </p>
-                    <button type="submit" style=" background: orange; margin-top: 13px; color:#fff"
-                        class="btn btn-lg">Start Thread</button>
-
-
+                <p style="margin: 20px auto;">Sign in to start thread<a href="../login.php"
+                        style="text-decoration:none">
+                        <small style="color: orange;">
+                            click here</small> </a>
+                </p>
+                <p>Dont have account, Register<a href="../signup.php" style="text-decoration:none">
+                        <small style="color: orange;">
+                            click here</small> </a>
+                </p>
+                <button type="submit" style=" background: orange; margin-top: 13px; color:#fff" class="btn btn-lg">Start
+                    Thread</button>
 
 
 
 
 
-                </form>
 
-            </div>
+
+            </form>
 
         </div>
-        <!-- User Questions, Ideas, tech information--->
-        <!-----Fetching data from coding-threads and dispalyed in Media object---->
 
-        <div class="container" style="width: 80%;">
-            <h2 class="my-5" style="margin-left:15px;">Browse Threads</h2>
+    </div>
+    <!-- User Questions, Ideas, tech information--->
+    <!-----Fetching data from coding-threads and dispalyed in Media object---->
 
-            <?php
+    <div class="container" style="width: 80%;">
+        <h2 class="my-5" style="margin-left:15px;">Browse Threads</h2>
+
+        <?php
 if (isset($_GET['categryid'])) {
     $categoryid = $_GET['categryid'];
     $nothread = true;
@@ -197,16 +170,12 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
 
 ?>
 
-        </div>
-        </div>
+    </div>
+    </div>
 
 
 
-    </section>
+</section>
 
 
-    <?php include '../view/footer.php'?>
-
-</body>
-
-</html>
+<?php include '../view/footer.php'?>

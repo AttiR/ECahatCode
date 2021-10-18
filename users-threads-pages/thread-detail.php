@@ -1,45 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Css -->
-    <link rel="stylesheet" href="../css/styles.css?<?php echo time(); ?>">
-
-    <!-- Bootsrap Css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <!-- Bootsrap JavaScript Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
-
-    <!-- Fontawsome -->
-    <script src="https://kit.fontawesome.com/d54712eab9.js" crossorigin="anonymous"></script>
-
-
-    l <title>
-        EchatCode - Thread Details
-    </title>
-</head>
-
-<body>
-
-
-    <?php
+<?php
 include '../config/dbcon.php';
 ?> <header>
-        <?php include '../view/header.php';?></header>
+    <?php include '../view/header.php';?></header>
 
-    <section>
+<section>
 
-        <!-------------------All we will play with "threadid" <=> we will deal with a particulat thread id, we will fetch threadid from
+    <!-------------------All we will play with "threadid" <=> we will deal with a particulat thread id, we will fetch threadid from
         $_GET['threadid']----------------------->
-        <!--- Lets fetch threadid and display it----->
-        <?php
+    <!--- Lets fetch threadid and display it----->
+    <?php
 $insert = false;
 $id = $_GET['threadid'];
 // getting 'categryid' via $_GET user clicks on explore more and we get id
@@ -81,15 +50,15 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
 
 ?>
 
-        <!---------------------- Now we will get comments through Form. We will
+    <!---------------------- Now we will get comments through Form. We will
         Make a new table wit name "code_comments" and we will store user comments in it
         Then we will fetch particular comments and display them ---------------------->
 
 
-        <!--------------store data/comments to database "code_comments"-------------------->
-        <!--Detecing Request type in phpt-->
+    <!--------------store data/comments to database "code_comments"-------------------->
+    <!--Detecing Request type in phpt-->
 
-        <?php $method = $_SERVER['REQUEST_METHOD'];
+    <?php $method = $_SERVER['REQUEST_METHOD'];
 if ($method == "POST") {
 
 // we will insert question/ information in codethreads table
@@ -109,49 +78,48 @@ VALUES ('$commentcontent', '$id', '0', current_timestamp())";
 }
 ?>
 
-        <!-- Form to get comments from users-->
+    <!-- Form to get comments from users-->
 
 
-        <div class="container" style="width: 80%;">
-            <h2 class="my-5" style="margin-left: 15px;">Start Comments on the Thread</h2>
+    <div class="container" style="width: 80%;">
+        <h2 class="my-5" style="margin-left: 15px;">Start Comments on the Thread</h2>
 
-            <!----------We will fetch comments from database------------>
-            <div <div div class="bg-light p-5 rounded-lg m-3">
-                <?php
+        <!----------We will fetch comments from database------------>
+        <div <div div class="bg-light p-5 rounded-lg m-3">
+            <?php
 if ($insert == true) {
     echo "<p style= 'color: green'> your thread has been sucessfully started</p>";
 }
 ?>
-                <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
-                    <!-- getting post on same page or where u require-->
+            <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
+                <!-- getting post on same page or where u require-->
 
-                    <div class="mb-3">
-                        <label class="form-label">Response to the Thread</label>
-                        <textarea class="form-control" id="comment" name="comment" rows="10"
-                            placeholder="your comments.." required></textarea>
-                    </div>
-
-
-                    <button type="submit" style=" background: orange; margin-top: 15px;color:#fff"
-                        class="btn btn-lg">Add
-                        Comment</button>
+                <div class="mb-3">
+                    <label class="form-label">Response to the Thread</label>
+                    <textarea class="form-control" id="comment" name="comment" rows="10" placeholder="your comments.."
+                        required></textarea>
+                </div>
 
 
-                </form>
+                <button type="submit" style=" background: orange; margin-top: 15px;color:#fff" class="btn btn-lg">Add
+                    Comment</button>
 
 
-            </div>
+            </form>
+
+
         </div>
+    </div>
 
 
 
 
 
-        <!------------------ fetch Data from Comments table------------------------->
-        <div class="container" style="width:80%">
-            <h2 class="my-5" style="margin-left: 15px;">Comments</h2>
-            <!-- thread id from url-->
-            <?php
+    <!------------------ fetch Data from Comments table------------------------->
+    <div class="container" style="width:80%">
+        <h2 class="my-5" style="margin-left: 15px;">Comments</h2>
+        <!-- thread id from url-->
+        <?php
 $threadid = $_GET['threadid'];
 $nothread = true;
 
@@ -188,9 +156,6 @@ if ($nothread) {
 $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli_error($connect));
 
 ?>
-        </div>
-    </section>
-    <?php include '../view/footer.php';?>
-</body>
-
-</html>
+    </div>
+</section>
+<?php include '../view/footer.php';?>
