@@ -18,6 +18,9 @@ if (isset($_POST["submit"])) {
     $email = $_POST["email"];
     $mobilenumber = $_POST["mobilenumber"];
     $feedback = $_POST["feedback"];
+    //$feedback = str_replace("<", "&lt;", $feedback); preveting from xxs attacks, we can aslo used
+    $feedback = htmlspecialchars($_POST['feedback']);
+    //$feedback = str_replace("<", "&gt;", $feedback);
 
     // PHP validation
     // Verify if form values are not empty
@@ -46,16 +49,9 @@ if (isset($_POST["submit"])) {
                       </div>';
         }
 
-        if (!preg_match("#^[a-zA-Z0-9 \.,\?_/'!£\$%&*()+=\r\n-]+$#", $_feedback)) {
-            $feedback_error = '<div class="alert alert-danger">
-           Message is not in correct format.<br>You can use a-z A-Z 0-9 . , ? _ /  ! £ $ % * () + = - Only.
-                      </div>';
-        }
-
         // Store the data in db, if all the preg_match condition met
         if ((preg_match("/^[a-zA-Z ]*$/", $name)) &&
-            (filter_var($_email, FILTER_VALIDATE_EMAIL)) && (preg_match("/^[0-9]{10}+$/", $_mobile_number)) &&
-            (preg_match("#^[a-zA-Z0-9 \.,\?_/'!£\$%&*()+=\r\n-]+$#", $_feedback))
+            (filter_var($_email, FILTER_VALIDATE_EMAIL)) && (preg_match("/^[0-9]{10}+$/", $_mobile_number))
 
         ) {
 

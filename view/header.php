@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light  bg-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light  fixed-top">
         <div class=" container-fluid">
             <a class="navbar-brand" href="/Echatcode" style="
               font-weight: bold;
@@ -79,10 +79,10 @@
                 </form>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">login</a>
+                        <a class="nav-link" href="./login.php">login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="signup.php" style="margin-right: 20px">signup</a>
+                        <a class="nav-link" href="./signup.php" style="margin-right: 20px">signup</a>
                     </li>
                 </ul>
             </div>
