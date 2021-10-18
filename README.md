@@ -1,1 +1,1 @@
-# ECahatCode
+# EChatCode
