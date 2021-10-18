@@ -45,6 +45,7 @@ if (isset($_POST["submit"])) {
                           Only 10-digit mobile numbers allowed.
                       </div>';
         }
+
         if (!preg_match("#^[a-zA-Z0-9 \.,\?_/'!£\$%&*()+=\r\n-]+$#", $_feedback)) {
             $feedback_error = '<div class="alert alert-danger">
            Message is not in correct format.<br>You can use a-z A-Z 0-9 . , ? _ /  ! £ $ % * () + = - Only.
@@ -150,7 +151,7 @@ if (isset($_POST["submit"])) {
         }
         if (empty($feedback)) {
             $emptyfeedback = '<div class="alert alert-danger">
-                  Mobile number can not be blank.
+                  feedback can not be blank.
               </div>';
         }
 
