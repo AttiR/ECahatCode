@@ -102,7 +102,11 @@ if (isset($_POST["submit"])) {
                 // username
 
                 $mail->Username = "attirehman388@gmail.com";
+<<<<<<< HEAD
                 $mail->Password = "xxxxxxxx";
+=======
+                $mail->Password = "xxxxx";
+>>>>>>> 078272f15d838f5c2d736de045f7469daec6586b
 
                 // Email Subject body etc
 
