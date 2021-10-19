@@ -32,7 +32,7 @@ include './config/dbcon.php';
 
 
     <h2 class="text-center my-5" style="color:#e87c1e;">Explore Web-Coding Categories</h2>
-    <p> Welcome, <?php echo $_SESSION['useremail'] ?></p>
+
     <div class="container-fluid" style="width:90%;margin-bottom:40px">
         <div class="row ">
 

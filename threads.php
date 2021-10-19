@@ -94,47 +94,40 @@ if ($method == "POST") {
 
     <div class="container" style="width:80%">
         <h2 class="my-5" style="margin-left: 15px;">Start New Conversation</h2>
-
-        <div div class="bg-light p-5 rounded-lg m-3">
-            <?php
+        <?php
 if ($insert == true) {
     echo "<p style= 'color: green'> your thread has been sucessfully started</p>";
 }
 ?>
-            <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
-                <!-- getting post on same page or where u require-->
-                <div class="mb-3">
-                    <label class="form-label">Thread Title</label>
-                    <input type="text" name="title" id="title" class="form-control" placeholder="enter precise title"
-                        required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Explain your Thread</label>
-                    <textarea class="form-control" id="desc" name="desc" rows="3" required></textarea>
-                </div>
-
-                <p style="margin: 20px auto;">Sign in to start thread<a href="../login.php"
-                        style="text-decoration:none">
-                        <small style="color: orange;">
-                            click here</small> </a>
-                </p>
-                <p>Dont have account, Register<a href="../signup.php" style="text-decoration:none">
-                        <small style="color: orange;">
-                            click here</small> </a>
-                </p>
-                <button type="submit" style=" background: orange; margin-top: 13px; color:#fff" class="btn btn-lg">Start
-                    Thread</button>
+        <!---------Restricting the starting conversation to only Login users ------>
+        <?php
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+    echo '
+        <div div class="bg-light p-5 rounded-lg m-3">
 
 
 
-
-
-
-
-            </form>
-
+            <form action="' . $_SERVER["REQUEST_URI"] . '" method="post">
+        <!-- getting post on same page or where u require-->
+        <div class="mb-3">
+            <label class="form-label">Thread Title</label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="enter precise title" required>
         </div>
+        <div class="mb-3">
+            <label class="form-label">Explain your Thread</label>
+            <textarea class="form-control" id="desc" name="desc" rows="3" required></textarea>
+        </div>
+        </p>
+        <button type="submit" style=" background: orange; margin-top: 13px; color:#fff" class="btn btn-lg">Start
+            Thread</button>
+                 </form>
 
+    </div>';
+} else {
+    echo '<p class= "lead" style= "margin-left:15px">You are Not Logged in, please Log in to start a conversation!</p>';
+}
+
+?>
     </div>
     <!-- User Questions, Ideas, tech information--->
     <!-----Fetching data from coding-threads and dispalyed in Media object---->
@@ -166,8 +159,9 @@ if (isset($_GET['categryid'])) {
                       Vn2JcU6dBBwVBdJ2MnI5hx+aKpfUcFw7AwTJ5f6ifqfGpOTWcNHcCcuFLapTpYRUWl5wq6yR8FXc2jOSoNhq7vgZlh4PoO2BFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/+m+4X/C8aeGQJJLlwAAAABJRU5ErkJggg==" alt="John Doe"
                      class=" me-3  rounded-circle" style="width:60px;height:60px;">
                  <div>
-                     <h5 class = "fw-bold"> <a class= "text-dark" style="text-decoration:none;" href= "thread-detail.php?threadid= ' . $thread_id . '">' . $threadname . ' </a>
-                     <small class = "text-muted" style= "padding: auto 40px">' . $time_date . '</small></h5>
+                 <h5 class= "fw-bold"> Anonymouse user
+                 <small class = "text-muted" style= "padding: auto 40px">' . $time_date . '</small></h5>
+                 <h6 class = "fw-bold"> <a class= "text-dark" style="text-decoration:none;" href= "thread-detail.php?threadid= ' . $thread_id . '">' . $threadname . ' </a></h6>
                      <p>' . $threaddesc . '</p>
                  </div>
              </div>

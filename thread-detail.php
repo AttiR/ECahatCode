@@ -20,7 +20,7 @@ include './config/dbcon.php';
 
 <section>
 
-    <!-------------------All we will play with "threadid" <=> we will deal with a particulat thread id, we will fetch threadid from
+    <!-----All we will play with "threadid" <=> we will deal with a particulat thread id, we will fetch threadid from
         $_GET['threadid']----------------------->
     <!--- Lets fetch threadid and display it----->
     <?php
@@ -98,32 +98,33 @@ VALUES ('$commentcontent', '$id', '0', current_timestamp())";
 
     <div class="container" style="width: 80%;">
         <h2 class="my-5" style="margin-left: 15px;">Start Comments on the Thread</h2>
-
-        <!----------We will fetch comments from database------------>
-        <div <div div class="bg-light p-5 rounded-lg m-3">
-            <?php
+        <?php
 if ($insert == true) {
     echo "<p style= 'color: green'> your thread has been sucessfully started</p>";
 }
 ?>
-            <form action="<?php echo $_SERVER['REQUEST_URI'] ?>" method="post">
-                <!-- getting post on same page or where u require-->
+        <!----------We will fetch comments from database------------>
+        <?php
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) { // restricting for only logged in userss
+    echo ' <div <div div class="bg-light p-5 rounded-lg m-3">
 
-                <div class="mb-3">
-                    <label class="form-label">Response to the Thread</label>
-                    <textarea class="form-control" id="comment" name="comment" rows="10" placeholder="your comments.."
-                        required></textarea>
-                </div>
+        <form action="' . $_SERVER["REQUEST_URI"] . '" method="post">
+        <!-- getting post on same page or where u require-->
 
-
-                <button type="submit" style=" background: orange; margin-top: 15px;color:#fff" class="btn btn-lg">Add
-                    Comment</button>
-
-
-            </form>
-
-
+        <div class="mb-3">
+            <label class="form-label">Response to the Thread</label>
+            <textarea class="form-control" id="comment" name="comment" rows="10" placeholder="your comments.."
+                required></textarea>
         </div>
+        <button type="submit" style=" background: orange; margin-top: 15px;color:#fff" class="btn btn-lg">Add
+            Comment</button>
+        </form>
+    </div>';
+} else {
+    echo '<p class= "lead" style= "margin-left:15px">No are Not Logged in, Please log in to post a Comment!</p>';
+}
+
+?>
     </div>
 
 

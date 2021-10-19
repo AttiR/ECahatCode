@@ -83,12 +83,12 @@ echo '
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     echo '
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right:20px">
                 <li class="nav-item">
-<a class= "nav-link" style= "color:orange"> Welcome, ' . $_SESSION['username'] . '</a>
+<a class= "nav-link" style= "color:orange; margin-right:15px">  ' . $_SESSION['username'] . '</a>
                 </li>
 <li>
-<a  class= "nav-link" href="view/logout.php" class="btn btn-outline-success ml-2">Logout</a>
+<a  href="view/logout.php" class="btn btn-outline-danger ">Logout</a>
 </li>
 
 
