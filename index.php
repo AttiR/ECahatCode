@@ -1,4 +1,6 @@
-< <?php include './config/dbcon.php';?> <header><?php include './view/header.php'?></header>
+< <?php
+include './config/dbcon.php';
+?> <header><?php include './view/header.php'?></header>
 
     <!-- INTRO SECTION -->
     <section class="intro-section">
@@ -30,8 +32,7 @@
 
 
     <h2 class="text-center my-5" style="color:#e87c1e;">Explore Web-Coding Categories</h2>
-
-
+    <p> Welcome, <?php echo $_SESSION['useremail'] ?></p>
     <div class="container-fluid" style="width:90%;margin-bottom:40px">
         <div class="row ">
 
@@ -54,7 +55,7 @@ while ($result = mysqli_fetch_assoc($query)) {
                         <div class="card-body">
                             <h5 class="card-title"> <a class= "text-dark my-3" style="text-decoration:none; letter-spacing:2px" href= "users-threads-pages/threads.php?categryid=  ' . $categoryid . ' "> ' . $category . ' </a> </h5>
                             <p class="card-text" style="text-align:justify">' . substr($description, 0, 100) . '.....</p>
-                            <a style= "background:orange; color:#fff" href="users-threads-pages/threads.php?categryid=  ' . $categoryid . ' " class="btn">Explore category</a>
+                            <a style= "background:orange; color:#fff" href="./threads.php?categryid=  ' . $categoryid . ' " class="btn">Explore category</a>
                         </div>
                     </div>
             </div>

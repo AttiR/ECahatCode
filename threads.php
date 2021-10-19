@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
         threads-deatils
@@ -15,8 +15,8 @@
 
 </body>
 
-</html><?php include '../config/dbcon.php';?>
-<header><?php include '../view/header.php'?></header>
+</html><?php include './config/dbcon.php';?>
+<header><?php include './view/header.php'?></header>
 <?php
 
 // fetching the data from a particular category , the category id passed from index.php
@@ -195,4 +195,4 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
 </section>
 
 
-<?php include '../view/footer.php'?>
+<?php include './view/footer.php'?>

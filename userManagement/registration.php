@@ -163,7 +163,7 @@ if (isset($_POST["submit"])) {
                     // username
 
                     $mail->Username = "attirehman388@gmail.com";
-                    $mail->Password = "Like@@999";
+                    $mail->Password = "xxxxxxxxxx";
 
                     // Email Subject body etc
 
@@ -177,10 +177,12 @@ if (isset($_POST["submit"])) {
 
                     if ($mail->send()) {
 
-                        $email_sent_status = "<small>An Email has been sent for verification</small>";
+                        $_SESSION['emailsent'] = "A verification email has been sent to you.";
+                        header('location:login.php');
 
                     } else {
-                        $email_sent_status = "<small>Email Sent Failure</small>";
+                        $_SESSION['emailsent'] = "Email send Failure.";
+                        header('location:login.php');
                     }
 
                     // closing smtp connection
