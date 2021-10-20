@@ -35,7 +35,11 @@ $query = mysqli_query($connect,
 while ($row = mysqli_fetch_assoc($query)) {
     $threadtitle = $row['code_thread_title'];
     $threaddesc = $row['code_thread_desc']; // this data will be used to show values according to the id
-
+    $thread_userid = $row['code_thread_user_id'];
+    // ftech username
+    $sql2 = "SELECT username FROM `code_users` WHERE `id` = $thread_userid";
+    $query2 = mysqli_query($connect, $sql2);
+    $row2 = mysqli_fetch_assoc($query2);
     echo '
     <!-- Jumbotron Bootsrap 5  for the particular thread id intro and lead-->
     <div class="container" style="width: 80%;">
@@ -47,12 +51,12 @@ while ($row = mysqli_fetch_assoc($query)) {
                 </p>' . $threaddesc . '
                 <!-- displaying data dynamicaaly -->
                 <hr class="my-4">
-                <p>This is a peer to peer code chat forum. No Spam / Advertising / Self-promote in the forums is not
-                    allowed. Do
-                    not post copyright-infringing material. Do not post “offensive” posts, links or images. Do
-                    not cross
-                    post questions. Remain respectful of other members at all times.
+                <p> No Spam / Advertising / Self-promote in the disscussion forum is not
+                    allowed. Do not post copyright-infringing material. Do not post “offensive” posts, links or images. Do
+                    not cross post questions. Remain respectful of other members at all times.
                 </p>
+                <p>Posted by: <small>' . $row2['username'] . '</small></p>
+
 
 
             </div>
@@ -65,26 +69,27 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
 
 ?>
 
-    <!---------------------- Now we will get comments through Form. We will
-        Make a new table wit name "code_comments" and we will store user comments in it
-        Then we will fetch particular comments and display them ---------------------->
+    <!-- Now we will get comments through Form. We will Make a new table wit name
+         "code_comments" and we will store user
+        comments in it Then we will fetch particular comments and display them -->
 
 
-    <!--------------store data/comments to database "code_comments"-------------------->
+    <!--store data/comments to database "code_comments"----->
     <!--Detecing Request type in phpt-->
 
     <?php $method = $_SERVER['REQUEST_METHOD'];
 if ($method == "POST") {
 
-// we will insert question/ information in codethreads table
+    // we will insert question/ information in codethreads table
     $commentcontent = $_POST['comment'];
+    $comment_user_id = $_POST['uid'];
 
     $sql = "INSERT INTO code_comments (code_comment_context, code_thread_id, comment_user_by, code_comment_created )
-VALUES ('$commentcontent', '$id', '0', current_timestamp())";
+    VALUES ('$commentcontent', '$id', '$comment_user_id', current_timestamp())";
     if ($connect->query($sql) == true) {
-// echo "Successfully inserted";
+        // echo "Successfully inserted";
 
-// Flag for successful insertion
+        // Flag for successful insertion
         $insert = true;
     } else {
         echo "ERROR: $sql <br> $connect->error";
@@ -116,6 +121,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) { // restricting for 
             <textarea class="form-control" id="comment" name="comment" rows="10" placeholder="your comments.."
                 required></textarea>
         </div>
+        <input type="hidden" name="uid" value="' . $_SESSION["uid"] . '">
         <button type="submit" style=" background: orange; margin-top: 15px;color:#fff" class="btn btn-lg">Add
             Comment</button>
         </form>
@@ -146,6 +152,11 @@ while ($row = mysqli_fetch_assoc($query)) {
     $comment_id = $row['code_comment_id'];
     $comment_content = $row['code_comment_context'];
     $time_date = $row['code_comment_created'];
+    $comment_userid = $row['Comment_user_by'];
+    $sql2 = "SELECT username FROM `code_users` WHERE `id` = $comment_userid";
+    $query2 = mysqli_query($connect, $sql2);
+    $row2 = mysqli_fetch_assoc($query2);
+
     $nothread = false;
 
     echo ' <div class="container mt-3">
@@ -154,7 +165,8 @@ while ($row = mysqli_fetch_assoc($query)) {
                     Vn2JcU6dBBwVBdJ2MnI5hx+aKpfUcFw7AwTJ5f6ifqfGpOTWcNHcCcuFLapTpYRUWl5wq6yR8FXc2jOSoNhq7vgZlh4PoO2BFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/+m+4X/C8aeGQJJLlwAAAABJRU5ErkJggg==" alt="John Doe"
                     class=" me-3  rounded-circle" style="width:60px;height:60px;">
                         <div>
-                            <small class = "text-muted">' . $time_date . '</small>
+                              <p style= "line-height:1.5px"> comment by:  ' . $row2['username'] . '
+                 <small class = "text-muted" style="margin-left:10px">' . $time_date . '</small></p>
                              <p>' . $comment_content . '</p>
                         </div>
                 </div>

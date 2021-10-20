@@ -34,7 +34,10 @@
                     <?php echo $verificationRequiredErr; ?>
                     <?php echo $email_empty_err; ?>
                     <?php echo $pass_empty_err; ?>
-
+                    <?php if (isset($_SESSION['emailsent'])) {
+    echo '<p style= color:green>' . $_SESSION['emailsent'] . '</p>';
+}
+?>
                     <div class="form-group">
                         <input type="email" class="form-control" name="email_signin" id="email_signin" value=""
                             placeholder="enter your email" />

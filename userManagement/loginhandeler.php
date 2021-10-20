@@ -55,19 +55,12 @@ if (isset($_POST['login'])) {
                 if ($email_signin == $email && $password_signin == $password) {
 
                     $_SESSION['loggedin'] = true;
-                    $_SESSION['id'] = $id;
+                    $_SESSION['uid'] = $id; // we will use thsi for userid as logged in
                     $_SESSION['useremail'] = $email;
                     $_SESSION['username'] = $username;
                     echo "logged in" . $email;
 
                     header("Location: ../index.php");
-
-                    /*$_SESSION['id'] = $id;
-                $_SESSION['firstname'] = $firstname;
-                $_SESSION['lastname'] = $lastname;
-                $_SESSION['email'] = $email;
-                $_SESSION['username'] = $username;
-                $_SESSION['token'] = $token;*/
 
                 } else {
                     $emailPwdErr = '<div class="alert alert-danger">
