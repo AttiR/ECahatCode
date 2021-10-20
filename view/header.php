@@ -59,23 +59,28 @@ echo '
                         Categories
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </li>
+                        <li>';
+
+// sql query to fetch categories dynamicaally
+$sql = "SELECT code_category_id, code_category_name FROM code_categories";
+$query = mysqli_query($connect, $sql);
+while ($row = mysqli_fetch_assoc($query)) {
+
+    echo '<a class="dropdown-item" href="threads.php?categryid=' . $row['code_category_id'] . '">' . $row['code_category_name'] . '</a>';
+}
+
+echo '</li>
+
+
                     </ul>
-                </li>
+             </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./contact.php">Contact</a>
                 </li>
             </ul>
 
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <form  action= "search.php" method = "gET" class="d-flex">
+                <input class="form-control me-2" type="search" name = "search" placeholder="Search" aria-label="Search" />
                 <button class="btn btn-outline-success" type="submit">
                     Search
                 </button>

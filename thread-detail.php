@@ -25,7 +25,7 @@ include './config/dbcon.php';
     <!--- Lets fetch threadid and display it----->
     <?php
 $insert = false;
-$id = $_GET['threadid'];
+$id = (int) $_GET['threadid'];
 // getting 'categryid' via $_GET user clicks on explore more and we get id
 
 $id = mysqli_real_escape_string($connect, $id);
@@ -81,8 +81,8 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
 if ($method == "POST") {
 
     // we will insert question/ information in codethreads table
-    $commentcontent = $_POST['comment'];
-    $comment_user_id = $_POST['uid'];
+    $commentcontent = htmlspecialchars($_POST['comment']);
+    $comment_user_id = (int) $_POST['uid'];
 
     $sql = "INSERT INTO code_comments (code_comment_context, code_thread_id, comment_user_by, code_comment_created )
     VALUES ('$commentcontent', '$id', '$comment_user_id', current_timestamp())";
@@ -142,7 +142,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) { // restricting for 
         <h2 class="my-5" style="margin-left: 15px;">Comments</h2>
         <!-- thread id from url-->
         <?php
-$threadid = $_GET['threadid'];
+$threadid = (int) $_GET['threadid'];
 $nothread = true;
 
 $sql = "SELECT * FROM `code_comments` WHERE `code_thread_id` = $threadid";

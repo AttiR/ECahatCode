@@ -21,7 +21,7 @@
 
 // fetching the data from a particular category , the category id passed from index.php
 $insert = false;
-$categoryid = $_GET['categryid']; // getting 'categryid' via $_GET user clicks on explore more and we get id
+$categoryid = (int) $_GET['categryid']; // getting 'categryid' via $_GET user clicks on explore more and we get id
 $categoryid = mysqli_real_escape_string($connect, $categoryid);
 $sql = "SELECT * FROM `code_categories` WHERE `code_category_id` = $categoryid";
 $query = mysqli_query($connect, $sql);
@@ -68,9 +68,11 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
 if ($method == "POST") {
 
     // we will insert question/ information in codethreads table
-    $thread_title = $_POST['title'];
-    $thread_desc = $_POST['desc'];
-    $thread_user_id = $_POST['uid'];
+    // changing html <>.. in to special charecters avoid xxs attackes
+    $thread_title = htmlspecialchars($_POST['title']);
+    $thread_desc = htmlspecialchars($_POST['desc']);
+
+    $thread_user_id = (int) $_POST['uid'];
 
     $sql = "INSERT INTO code_threads (code_thread_title, code_thread_desc, code_category_id, code_thread_user_id, timestamp)
     VALUES ('$thread_title', '$thread_desc', '$categoryid', '$thread_user_id', current_timestamp())";
@@ -137,14 +139,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 
         <?php
 if (isset($_GET['categryid'])) {
-    $categoryid = $_GET['categryid'];
+    $categoryid = (int) $_GET['categryid'];
     $nothread = true;
 
     $sql = "SELECT * FROM `code_threads` WHERE `code_category_id` = $categoryid";
     $query = mysqli_query($connect, $sql);
     while ($row = mysqli_fetch_assoc($query)) {
 
-        $thread_id = $row['code_thread_id'];
+        $id = $row['code_thread_id'];
         $threadname = $row['code_thread_title'];
         $threaddesc = $row['code_thread_desc'];
         $time_date = $row['timestamp'];
@@ -163,7 +165,7 @@ if (isset($_GET['categryid'])) {
                       Vn2JcU6dBBwVBdJ2MnI5hx+aKpfUcFw7AwTJ5f6ifqfGpOTWcNHcCcuFLapTpYRUWl5wq6yR8FXc2jOSoNhq7vgZlh4PoO2BFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/+m+4X/C8aeGQJJLlwAAAABJRU5ErkJggg==" alt="John Doe"
                      class=" me-3  rounded-circle" style="width:60px;height:60px;">
                  <div>
-                 <h6 class = "fw-bold"> <a class= "text-dark" style="text-decoration:none;" href= "thread-detail.php?threadid= ' . $thread_id . '">' . $threadname . ' </a></h6>
+                 <h6 class = "fw-bold"> <a class= "text-dark" style="text-decoration:none;" href= "thread-detail.php?threadid= ' . $id . '">' . $threadname . ' </a></h6>
                      <p>' . $threaddesc . '</p>
                      <p style= "line-height:1.5px"> Asked by:  ' . $row2['username'] . '
                  <small class = "text-muted" style="margin-left:10px">' . $time_date . '</small></p>

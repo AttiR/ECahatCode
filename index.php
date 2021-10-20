@@ -55,7 +55,7 @@ while ($result = mysqli_fetch_assoc($query)) {
                         <div class="card-body">
                             <h5 class="card-title"> <a class= "text-dark my-3" style="text-decoration:none; letter-spacing:2px" href= "users-threads-pages/threads.php?categryid=  ' . $categoryid . ' "> ' . $category . ' </a> </h5>
                             <p class="card-text" style="text-align:justify">' . substr($description, 0, 100) . '.....</p>
-                            <a style= "background:orange; color:#fff" href="./threads.php?categryid=  ' . $categoryid . ' " class="btn">Explore category</a>
+                            <a style= "background:orange; color:#fff" href="threads.php?categryid=  ' . $categoryid . ' " class="btn">Explore category</a>
                         </div>
                     </div>
             </div>
