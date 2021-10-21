@@ -163,7 +163,7 @@ if (isset($_POST["submit"])) {
                     // username
 
                     $mail->Username = "attirehman388@gmail.com";
-                    $mail->Password = "Access@@899";
+                    $mail->Password = "xxxxxxxx";
 
                     // Email Subject body etc
 
