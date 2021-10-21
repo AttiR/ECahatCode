@@ -103,7 +103,7 @@ if ($insert == true) {
         <?php
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     echo '
-        <div div class="bg-light p-5 rounded-lg m-3">
+        <div  class="bg-light p-5 rounded-lg m-3">
 
 
 
@@ -154,6 +154,7 @@ if (isset($_GET['categryid'])) {
         $sql2 = "SELECT username FROM `code_users` WHERE `id` = $thread_userid";
         $query2 = mysqli_query($connect, $sql2);
         $row2 = mysqli_fetch_assoc($query2);
+        $username = $row2['username'];
         $nothread = false;
 
         echo '
@@ -166,9 +167,18 @@ if (isset($_GET['categryid'])) {
                      class=" me-3  rounded-circle" style="width:60px;height:60px;">
                  <div>
                  <h6 class = "fw-bold"> <a class= "text-dark" style="text-decoration:none;" href= "thread-detail.php?threadid= ' . $id . '">' . $threadname . ' </a></h6>
-                     <p>' . $threaddesc . '</p>
-                     <p style= "line-height:1.5px"> Asked by:  ' . $row2['username'] . '
-                 <small class = "text-muted" style="margin-left:10px">' . $time_date . '</small></p>
+                     <p>' . $threaddesc . '</p>';
+        //logic to check when username does not exit
+        if ($username) {
+            echo ' <p style= "line-height:1.5px"> Asked by:  ' . $username . '';
+
+        } else {
+
+            echo ' <p style= "line-height:1.5px"> Asked by: Anonymouse';
+
+        }
+
+        echo '<small class = "text-muted" style="margin-left:10px">' . $time_date . '</small></p>
                  </div>
              </div>
          </div> ';

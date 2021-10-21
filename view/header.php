@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <!-- FontAwsome -->
+    <script src="https://kit.fontawesome.com/d54712eab9.js" crossorigin="anonymous"></script>
+
     <title>Document</title>
 </head>
-<link rel="stylesheet" href="./css/styles.css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-</script>
-<!-- FontAwsome -->
-<script src="https://kit.fontawesome.com/d54712eab9.js" crossorigin="anonymous"></script>
 
 
 <body>
@@ -83,7 +85,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     echo '
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="margin-right:20px">
                 <li class="nav-item">
-<a class= "nav-link" style= "color:orange; margin-right:15px">  ' . $_SESSION['username'] . '</a>
+<a class= "nav-link" href="profile.php" style= "color:orange; margin-right:15px">  ' . $_SESSION['username'] . '</a>
                 </li>
 <li>
 <a  href="view/logout.php" class="btn btn-outline-danger ">Logout</a>

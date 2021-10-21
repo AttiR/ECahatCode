@@ -44,6 +44,7 @@ if (isset($_POST['login'])) {
                 $username = $row['username'];
                 $is_active = $row['is_active'];
                 $pass_word = $row['password'];
+                $joined_date = $row['date_time'];
 
             }
 
@@ -58,6 +59,7 @@ if (isset($_POST['login'])) {
                     $_SESSION['uid'] = $id; // we will use thsi for userid as logged in
                     $_SESSION['useremail'] = $email;
                     $_SESSION['username'] = $username;
+                    $_SESSION['joindate'] = $joined_date;
                     echo "logged in" . $email;
 
                     header("Location: ../index.php");

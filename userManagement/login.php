@@ -34,8 +34,17 @@
                     <?php echo $verificationRequiredErr; ?>
                     <?php echo $email_empty_err; ?>
                     <?php echo $pass_empty_err; ?>
-                    <?php if (isset($_SESSION['emailsent'])) {
+                    <?php
+if (isset($_SESSION['emailsent'])) {
     echo '<p style= color:green>' . $_SESSION['emailsent'] . '</p>';
+
+}
+if (isset($_SESSION['updatemessage'])) {
+    echo '<p style= color:green>' . $_SESSION['updatemessage'] . '</p>';
+
+}
+if (isset($_SESSION['message'])) {
+    echo $_SESSION['message'];
 }
 ?>
                     <div class="form-group">
@@ -51,7 +60,7 @@
 
 
 
-                    <p style="color: #fff;">Forgot Password? <a href="RecoverEmail.php" style="color: orange;">
+                    <p style="color: #fff;">Forgot Password? <a href="recover.php" style="color: orange;">
                             Click
                             Here </a> </p>
 
