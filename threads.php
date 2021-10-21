@@ -49,13 +49,11 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
                 <?php echo $categorydesc ?> </p>
             <!-- displaying data dynamicaaly -->
             <hr class="my-4">
-            <p>This is a peer to peer code chat forum. No Spam / Advertising / Self-promote in the forums is not
-                allowed. Do
-                not post copyright-infringing material. Do not post “offensive” posts, links or images. Do
-                not cross
-                post questions. Remain respectful of other members at all times.
+            <p>This is a code chat forum. Do not post “offensive” posts, links or images. Do
+                not cross post questions. Remain respectful of other members at all times.<em>Lets help each
+                    others.</em>
             </p>
-            <a style="background:orange; color:#fff" class="btn btn-lg" href="../about.php" role="button">Learn
+            <a style="background:orange; color:#fff" class="btn btn-lg" href="./about.php" role="button">Learn
                 more</a>
         </div>
 
@@ -151,6 +149,7 @@ if (isset($_GET['categryid'])) {
         $threaddesc = $row['code_thread_desc'];
         $time_date = $row['timestamp'];
         $thread_userid = $row['code_thread_user_id'];
+        // user name fetching
         $sql2 = "SELECT username FROM `code_users` WHERE `id` = $thread_userid";
         $query2 = mysqli_query($connect, $sql2);
         $row2 = mysqli_fetch_assoc($query2);

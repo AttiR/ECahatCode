@@ -98,10 +98,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     echo '
     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link" href="./userManagement/login.php">login</a>
+            <a class="nav-link" href="userManagement/login.php">login</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="./userManagement/signup.php" style="margin-right: 20px">signup</a>
+            <a class="nav-link" href="userManagement/signup.php" style="margin-right: 20px">signup</a>
         </li>
     </ul>';
 

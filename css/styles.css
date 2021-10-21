@@ -366,7 +366,7 @@ button {
   color: inherit;
   border-radius: 2px;
   cursor: pointer;
-  margin-bottom: 15px;
+  margin-top: 13px;
   color: var(--white);
 }
 
@@ -374,7 +374,7 @@ button {
 
 .card-prof {
   width: 700px;
-  background-color: #efefef;
+  background-color: #fff;
   border: none;
   cursor: pointer;
   transition: all 0.5s;

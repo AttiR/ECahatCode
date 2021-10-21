@@ -18,7 +18,7 @@ include './config/dbcon.php';
             <thead>
                 <tr>
                     <th scope="col">
-                        s.no
+                        S.No
                     </th>
                     <th scope="col">Thread Title</th>
                     <th scope="col">Thread Description</th>
@@ -32,18 +32,19 @@ code_thread_desc LIKE '$search%'";
 // We will use Full_text Search Technique
 //$sql = "select * from code_threads where match (code_thread_title, code_thread_desc) against ('$search')";
 $result = mysqli_query($connect, $sql);
-
+$sno = 0;
 while ($row = mysqli_fetch_assoc($result)) {
 
     $title = $row['code_thread_title'];
     $desc = $row['code_thread_desc'];
     $thread_id = $row['code_thread_id'];
     $nosearchresult = false;
+    $sno = $sno + 1;
 
     echo '
 
             <tr>
-                <td style="width: 20%;">' . $thread_id . '
+                <td style="width: 20%;">' . $sno . '
                 </td>
                 <td style="width:30%"><a class="text-dark" style="text-decoration:none;"
                         href="thread-detail.php?threadid= ' . $thread_id . '">
