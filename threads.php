@@ -177,8 +177,20 @@ if (isset($_GET['categryid'])) {
 
         }
 
-        echo '<small class = "text-muted" style="margin-left:10px">' . $time_date . '</small></p>
-                 </div>
+        echo '<small class = "text-muted" style="margin-left:10px">' . $time_date . '</small>
+        </p>';
+
+        /// Logic for icons, subject them to login or random users.
+        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+            if ($thread_userid == $_SESSION['uid']) {
+                echo '<i style = "margin: auto 30px" class="far fa-trash-alt"></i><i style = "margin: auto 30px" class="far fa-edit"></i><i style = "margin: auto 30px" class="far fa-thumbs-up"></i><i style = "margin: auto 30px" class="far fa-thumbs-down"></i>';
+            } else {
+                echo '
+                <i style = "margin: auto 30px" class="far fa-thumbs-up"></i><i style = "margin: auto 30px" class="far fa-thumbs-down"></i>';
+            }
+
+        }
+        echo '</div>
              </div>
          </div> ';
     }
@@ -186,21 +198,14 @@ if (isset($_GET['categryid'])) {
         echo '<div class=" bg-light p-5 rounded-lg m-3">
                 <h2>No Thread Found</h2><br>
                 <p>Start a New Thread</p>
-             </div>
-             ';
+             </div>           ';
     }
 
 }
 $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli_error($connect));
 
 ?>
-
     </div>
     </div>
-
-
-
 </section>
-
-
 <?php include './view/footer.php'?>

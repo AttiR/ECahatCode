@@ -72,10 +72,13 @@ if (isset($_SESSION['message'])) {
                                 here </a> </p>
 
 
-                        <input style="margin:13px auto" class="form-check-input" name="remember" type="checkbox" <label
-                            class="form-check-label">
-                        Remember Me
-                        </label>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Remember Me
+                            </label>
+                        </div>
                         <button type="submit" name="login" id="login" class=" user-btn ">sign in
                         </button>
 
