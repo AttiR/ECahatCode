@@ -183,10 +183,10 @@ if (isset($_GET['categryid'])) {
         /// Logic for icons, subject them to login or random users.
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
             if ($thread_userid == $_SESSION['uid']) {
-                echo '<i style = "margin: auto 30px" class="far fa-trash-alt"></i><i style = "margin: auto 30px" class="far fa-edit"></i><i style = "margin: auto 30px" class="far fa-thumbs-up"></i><i style = "margin: auto 30px" class="far fa-thumbs-down"></i>';
+                echo '<a class = "text-dark" style= "text-decoration: none; margin-right: 30px" href= "thread-detail.php?threadid= ' . $id . '">Comment</a><a href = "./view/delete.php?delid= ' . $id . '"><i style = "margin: auto 30px" class="far fa-trash-alt"></a></i><i style = "margin: auto 30px" class="far fa-edit"></i><i style = "margin: auto 30px" class="far fa-thumbs-up"></i><i style = "margin: auto 30px" class="far fa-thumbs-down"></i>';
             } else {
                 echo '
-                <i style = "margin: auto 30px" class="far fa-thumbs-up"></i><i style = "margin: auto 30px" class="far fa-thumbs-down"></i>';
+                <a class = "text-dark" style= "text-decoration: none; margin-right:30px" href= "thread-detail.php?threadid= ' . $id . '">Comment</a><i style = "margin: auto 30px" class="far fa-thumbs-up"></i><i style = "margin: auto 30px" class="far fa-thumbs-down"></i>';
             }
 
         }
