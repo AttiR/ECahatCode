@@ -28,13 +28,46 @@ include './config/dbcon.php';
         </div>
     </section>
 
+    <!--------------Features --------------->
+
+    <section style="margin-top:4rem; padding:0" id="features">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="feature-box col-lg-4">
+                    <i class="icon fas fa-check-circle fa-4x text-center"></i>
+                    <h3 class="feature-title">Helping community</h3>
+                    <p>Share up to date information, ask questions and help others with queries.</p>
+                </div>
+
+                <div class="feature-box col-lg-4">
+                    <i class="icon far fa-file-code fa-4x"></i>
+                    <h3 class="feature-title">Web development</h3>
+                    <p>Ask, share and guide others, Full-stack Web- development.</p>
+                </div>
+
+                <div class="feature-box col-lg-4">
+                    <i class="icon fas fa-database fa-4x"></i>
+                    <h3 class="feature-title">Database information & queries.</h3>
+                    <p>Mongodb, MySql, information, queries and solutions.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
     <!-- Categories -->
 
 
-    <h2 class="text-center my-5" style="color:#e87c1e;">Explore Web-Coding Categories</h2>
+    <h2 class="text-center " style="color:#e87c1e;margin:4rem auto">Explore Web-Coding Categories</h2>
 
-    <div class="container-fluid" style="width:90%;margin-bottom:40px">
-        <div class="row ">
+    <div class="container" style="margin-bottom: 4rem;">
+        <div class=" row ">
 
             <!-- Fetch Gategories form Database-->
 
@@ -49,7 +82,7 @@ while ($result = mysqli_fetch_assoc($query)) {
     $description = $result['code_category_description'];
 
     echo '
-                <div class= "col-md-4">
+                <div class= "col-lg-4 col-md-6 col-xs-12">
                     <div class="card my-3 mx-3" >
                         <img src="https://source.unsplash.com/500x400/?' . $category . ' ,coding" class="card-img-top" alt="...">
                         <div class="card-body">

@@ -7,13 +7,9 @@
     <link rel="stylesheet" href="./css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        threads-deatils
+        threads- EchatCode
     </title>
 </head>
-
-<body>
-
-</body>
 
 </html><?php include './config/dbcon.php';?>
 <header><?php include './view/header.php'?></header>
@@ -40,21 +36,23 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
 
 
     <!-- Jumbotron Bootsrap 5  for category intro and lead-->
-    <div class="container" style="width: 80%;">
-        <div class="bg-light p-5 rounded-lg m-3">
-            <h1 class="my-4">
-                <?php echo $categoryname ?> Forum</h1>
+    <div class="container" style="width: 80%; margin-top:5rem">
+        <div class="p-5 rounded-lg m-4" style="background: rgba(231, 231, 241, 0.5);">
+            <h1 class=" text-center my-4" style="letter-spacing: 0.1em;">
+                Lets Disscuss <?php echo $categoryname ?> </h1>
             <!-- displaying data dynamically-->
-            <p class=" lead">
+            <p class=" lead" style="letter-spacing: 0.1em;">
                 <?php echo $categorydesc ?> </p>
             <!-- displaying data dynamicaaly -->
             <hr class="my-4">
-            <p>This is a code chat forum. Do not post “offensive” posts, links or images. Do
-                not cross post questions. Remain respectful of other members at all times.<em>Lets help each
+            <p style="letter-spacing: 0.1em;">This is a Code chat forum.
+                Do not cross post questions, remain respectful of other members at all times.<em>Lets help each
                     others.</em>
             </p>
-            <a style="background:orange; color:#fff" class="btn btn-lg" href="./about.php" role="button">Learn
-                more</a>
+            <center> <a style="background:orange; color:#fff;margin-top:2rem;letter-spacing: 0.1em;" class="btn btn-lg"
+                    href="./about.php" role="button">Learn
+                    more</a></center>
+
         </div>
 
     </div>
@@ -91,7 +89,7 @@ if ($method == "POST") {
     <!------------- form for getting the questions and information from the users-------------------->
 
     <div class="container" style="width:80%">
-        <h2 class="my-5" style="margin-left: 15px;">Start New Conversation</h2>
+        <h2 style="margin:4rem auto 4rem 1.5rem">Start New Conversation</h2>
         <?php
 if ($insert == true) {
     echo "<p style= 'color: green'> your thread has been sucessfully started</p>";
@@ -132,7 +130,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     <!-- User Questions, Ideas, tech information--->
     <!-----Fetching data from coding-threads and dispalyed in Media object---->
 
-    <div class="container" style="width: 80%;">
+    <div class="container" style="width: 80%; margin-bottom:5rem">
         <h2 class="my-5" style="margin-left:15px;">Browse Threads</h2>
 
         <?php
@@ -184,8 +182,8 @@ if (isset($_GET['categryid'])) {
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
             if ($thread_userid == $_SESSION['uid']) {
                 echo '<a  style= "text-decoration: none; margin-right: 30px" href= "thread-detail.php?threadid= ' . $id . '">Comment<a/>
-                <a class= text-dark href= "./view/delete.php?delid='.$id.'"><i style = "margin: auto 30px;" class="far fa-trash-alt"></i></a>
-                <a class= "text-dark" style= "textdecoration:none" href="./view/update.php?update_thid='.$id.'">
+                <a class= text-dark href= "./view/delete.php?delid=' . $id . '"><i style = "margin: auto 30px;" class="far fa-trash-alt"></i></a>
+                <a class= "text-dark" style= "textdecoration:none" href="./view/update.php?update_thid=' . $id . '">
                 <i style = "margin: auto 30px" class="far fa-edit"> </i></a>';
             } else {
                 echo '

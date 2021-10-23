@@ -1,3 +1,4 @@
+<?php include './config/dbcon.php';?>
 <header><?php include 'view/header.php'?></header>
 <div class="container-fluid">
     <img class="about-img1" src="./view/images/About1.jpg" alt="image">
@@ -18,8 +19,8 @@
                 <p class="u-mb-medium">
 
                     EChatCode, a disscussion forum where one can share, ask the question and ideas.
-                    The aim is to serves as aresource to help developers of all skillsets.
-                    Our mission is to help each other learn, build and share using code. Lets share and helpeach
+                    The aim is to serves as a resource to help developers of all skill sets.
+                    Our mission is to help each other learn, build and share using code. Lets share and help each
                     others.
                 </p>
 

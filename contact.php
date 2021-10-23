@@ -155,22 +155,32 @@ if (isset($_POST["submit"])) {
 }
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - EchatCode</title>
+</head>
+
 <header>
     <?php include 'view/header.php'?>
 </header>
 <section id="user-form">
 
     <center>
-        <div style="width: 50%; margin:30px auto 30px auto">
+        <div style="width: 50%; margin-top:4rem">
             <h1 id="title" class="text-center" style="color: orange;">Contact Us</h1>
-            <h4 class="text-center" style="margin-bottom: 40px;">We valued your Feedback</h4>
+            <h4 class="text-center" style="margin-bottom: 40px;">We value your Feedback!</h4>
             <!-- <p id="description" class="description text-center">
 
             </p>-->
         </div>
 
     </center>
-    <div class="contact-form">
+    <div class="contact-form" style="margin-bottom: 5rem;">
 
 
 
@@ -216,20 +226,4 @@ if ($insert == true) {
         </form>
     </div>
 </section>
-
-
-
-
-<div class="vertical-center">
-    <div class="enter-form">
-
-        <h2 style="color: orange;">Contact Information</h2>
-        <p style="color: #fff;">Adress: Helsinki 234X <br> P.O.Box xx34 <br> Finland
-            <br> Email: chatcodee@gmail.com <br>Cell: +3584324xxx2
-        </p>
-
-    </div>
-
-</div>
-
 <?php include 'view/footer.php'?>
