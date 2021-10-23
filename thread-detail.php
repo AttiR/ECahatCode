@@ -172,7 +172,8 @@ while ($row = mysqli_fetch_assoc($query)) {
                             //Logic to put conditions on Comments
                             if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']){
                                 if($comment_userid == $_SESSION['uid']){
-                                    echo '<a href= "./view/delete.php?comdelid='.$comment_id.'" ><i style = "margin: auto 30px;" class="far fa-trash-alt"></a></i><i style = "margin: auto 30px" class="far fa-edit"> </i>';
+                                    echo '<a class= "text-dark" style= "text-decoration:none" href= "./view/delete.php?comdelid='.$comment_id.'" ><i style = "margin: auto 30px;" class="far fa-trash-alt"></i></a>
+                                    <a class= "text-dark" style= "text-decoration:none" href= "./view/update.php?update_comid='.$comment_id.'"></i><i style = "margin: auto 30px" class="far fa-edit"> </i></a>';
                                 }      
                             }
                             

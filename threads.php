@@ -183,9 +183,10 @@ if (isset($_GET['categryid'])) {
         /// Logic for icons, subject them to login or random users.
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
             if ($thread_userid == $_SESSION['uid']) {
-                echo '<a  style= "text-decoration: none; margin-right: 30px" href= "thread-detail.php?threadid= ' . $id . '">Cooments<a/>
+                echo '<a  style= "text-decoration: none; margin-right: 30px" href= "thread-detail.php?threadid= ' . $id . '">Comment<a/>
                 <a class= text-dark href= "./view/delete.php?delid='.$id.'"><i style = "margin: auto 30px;" class="far fa-trash-alt"></i></a>
-                <i style = "margin: auto 30px" class="far fa-edit"> </i>';
+                <a class= "text-dark" style= "textdecoration:none" href="./view/update.php?update_thid='.$id.'">
+                <i style = "margin: auto 30px" class="far fa-edit"> </i></a>';
             } else {
                 echo '
                 <a  style= "text-decoration: none; margin-right:30px" href= "thread-detail.php?threadid= ' . $id . '">Comment</a>';
