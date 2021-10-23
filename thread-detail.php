@@ -167,8 +167,17 @@ while ($row = mysqli_fetch_assoc($query)) {
                         <div>
                               <p style= "line-height:1.5px"> comment by:  ' . $row2['username'] . '
                  <small class = "text-muted" style="margin-left:10px">' . $time_date . '</small></p>
-                             <p>' . $comment_content . '</p>
-                        </div>
+                             <p>' . $comment_content . '</p>';
+
+                            //Logic to put conditions on Comments
+                            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']){
+                                if($comment_userid == $_SESSION['uid']){
+                                    echo '<a href= "./view/delete.php?comdelid='.$comment_id.'" ><i style = "margin: auto 30px;" class="far fa-trash-alt"></a></i><i style = "margin: auto 30px" class="far fa-edit"> </i>';
+                                }      
+                            }
+                            
+                             
+                 echo '</div>
                 </div>
             </div> ';
 }
