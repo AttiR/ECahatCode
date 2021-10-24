@@ -1,20 +1,31 @@
-<?php
+<!DOCTYPE html>
+< lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="./css/styles.css?<?php echo time(); ?>">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile - EchatCode</title>
+    </head>
+
+    <?php
 include './config/dbcon.php';
 ?>
-<header>
-    <?php include './view/header.php'?>
-</header>
+    <header>
+        <?php include './view/header.php'?>
+    </header>
 
 
-<section>
 
+    <section>
 
-    <center>
+        <center>
 
-        <div class="card card-prof" style="border:none">
-            <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-                <div class="card card2">
-                    <?php
+            <div class="card card-prof" style="border:none">
+                <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+                    <div class="card card2">
+                        <?php
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     echo '<div class=" image d-flex flex-column justify-content-center align-items-center">
@@ -41,12 +52,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 
 ?>
 
+                    </div>
                 </div>
             </div>
-        </div>
-    </center>
+        </center>
 
+    </section>
 
-
-</section>
-<?php include './view/footer.php';?>
+    <?php include './view/footer.php';?>

@@ -37,7 +37,7 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
 
     <!-- Jumbotron Bootsrap 5  for category intro and lead-->
     <div class="container" style="width: 80%; margin-top:5rem">
-        <div class="p-5 rounded-lg m-4" style="background: rgba(231, 231, 241, 0.5);">
+        <div class="p-5 rounded-lg m-4 thread-intro">
             <h1 class=" text-center my-4" style="letter-spacing: 0.1em;">
                 Lets Disscuss <?php echo $categoryname ?> </h1>
             <!-- displaying data dynamically-->
@@ -99,7 +99,7 @@ if ($insert == true) {
         <?php
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     echo '
-        <div  class="bg-light p-5 rounded-lg m-3">
+        <div  class="p-5 rounded-lg m-3 thread-intro" style="border-bottom:none">
 
 
 
@@ -131,7 +131,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     <!-----Fetching data from coding-threads and dispalyed in Media object---->
 
     <div class="container" style="width: 80%; margin-bottom:5rem">
-        <h2 class="my-5" style="margin-left:15px;">Browse Threads</h2>
+        <h2 style="margin:4rem auto 4rem 1.5rem;line-height:1.5px; letter-spacing:0.1em">Browse Threads</h2>
 
         <?php
 if (isset($_GET['categryid'])) {
@@ -159,12 +159,12 @@ if (isset($_GET['categryid'])) {
         <div class="container mt-3">
 
              <div class="d-flex ">
-                 <img src=data:image/png;base64,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
-                      Vn2JcU6dBBwVBdJ2MnI5hx+aKpfUcFw7AwTJ5f6ifqfGpOTWcNHcCcuFLapTpYRUWl5wq6yR8FXc2jOSoNhq7vgZlh4PoO2BFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/+m+4X/C8aeGQJJLlwAAAABJRU5ErkJggg==" alt="John Doe"
+               
+              <img src="https://www.clipartmax.com/png/full/255-2556971_computer-icons-user-management-clip-art-default-profile-picture-green.png" alt="image"
                      class=" me-3  rounded-circle" style="width:60px;height:60px;">
                  <div>
-                 <h6 class = "fw-bold"> <a class= "text-dark" style="text-decoration:none;" href= "thread-detail.php?threadid= ' . $id . '">' . $threadname . ' </a></h6>
-                     <p>' . $threaddesc . '</p>';
+                 <h6 style= "letter-spacing:0.1em" class = "fw-bold"> <a class= "text-dark" style="text-decoration:none;" href= "thread-detail.php?threadid= ' . $id . '">' . $threadname . ' </a></h6>
+                     <p style= "letter-spacing:0.1em>' . $threaddesc . '</p>';
         //logic to check when username does not exit
         if ($username) {
             echo ' <p style= "line-height:1.5px"> Asked by:  ' . $username . '';

@@ -26,6 +26,7 @@ include './config/dbcon.php';
     <?php
 $insert = false;
 $id = (int) $_GET['threadid'];
+
 // getting 'categryid' via $_GET user clicks on explore more and we get id
 
 $id = mysqli_real_escape_string($connect, $id);
@@ -42,18 +43,17 @@ while ($row = mysqli_fetch_assoc($query)) {
     $row2 = mysqli_fetch_assoc($query2);
     echo '
     <!-- Jumbotron Bootsrap 5  for the particular thread id intro and lead-->
-    <div class="container" style="width: 80%;">
-            <div class="bg-light p-5 rounded-lg m-3">
-                <h1 class="my-4">' . $threadtitle . '
+    <div class="container text-center" style="width: 80%; margin-top:5rem; width:80%; letter-spacing:0.1em">
+            <div class=" p-5 rounded-lg m-3 thread-intro">
+                <h1 class="my-4" style= "letter-spacing:0.1em">' . $threadtitle . '
                 </h1>
                 <!-- displaying data dynamically-->
-                <p class=" lead">
+                <p lass=" lead" >
                 </p>' . $threaddesc . '
                 <!-- displaying data dynamicaaly -->
                 <hr class="my-4">
-                <p> No Spam / Advertising / Self-promote in the disscussion forum is not
-                    allowed. Do not post copyright-infringing material. Do not post “offensive” posts, links or images. Do
-                    not cross post questions. Remain respectful of other members at all times.
+                <p >
+                     Do not cross post questions. Remain respectful of other members at all times.
                 </p>
                 <p>Posted by: <small>' . $row2['username'] . '</small></p>
 
@@ -102,7 +102,9 @@ if ($method == "POST") {
 
 
     <div class="container" style="width: 80%;">
-        <h2 class="my-5" style="margin-left: 15px;">Start Comments on the Thread</h2>
+        <h2 style="margin: 4rem auto 4rem 1.5rem; letter-spacing:0.1em">Start Comments on the Thread
+        </h2>
+
         <?php
 if ($insert == true) {
     echo "<p style= 'color: green'> your thread has been sucessfully started</p>";
@@ -111,18 +113,19 @@ if ($insert == true) {
         <!----------We will fetch comments from database------------>
         <?php
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) { // restricting for only logged in userss
-    echo ' <div <div div class="bg-light p-5 rounded-lg m-3">
+    echo ' <div <div div class=" p-5 rounded-lg m-3 thread-intro" style="border-bottom:none; letter-spacing:0.1em">
 
         <form action="' . $_SERVER["REQUEST_URI"] . '" method="post">
         <!-- getting post on same page or where u require-->
 
         <div class="mb-3">
-            <label class="form-label">Response to the Thread</label>
-            <textarea class="form-control" id="comment" name="comment" rows="10" placeholder="your comments.."
+            <label class="form-label" style= "margin-bottom:2rem">Response to the Thread</label>
+            <textarea class="form-control" id="comment" name="comment" rows="10"
+
                 required></textarea>
         </div>
         <input type="hidden" name="uid" value="' . $_SESSION["uid"] . '">
-        <button type="submit" style=" background: orange; margin-top: 15px;color:#fff" class="btn btn-lg">Add
+        <button type="submit" style=" background: orange; margin-top: 15px;color:#fff; letter-spacing:0.1em" class="btn btn-lg">Add
             Comment</button>
         </form>
     </div>';
@@ -138,8 +141,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) { // restricting for 
 
 
     <!------------------ fetch Data from Comments table------------------------->
-    <div class="container" style="width:80%">
-        <h2 class="my-5" style="margin-left: 15px;">Comments</h2>
+    <div class="container" style="width:80%; margin-bottom:4rem">
+        <h2 style="margin:4rem auto 4rem 1.5rem;letter-spacing:0.1em">Comments</h2>
         <!-- thread id from url-->
         <?php
 $threadid = (int) $_GET['threadid'];
@@ -159,26 +162,24 @@ while ($row = mysqli_fetch_assoc($query)) {
 
     $nothread = false;
 
-    echo ' <div class="container mt-3">
+    echo ' <div class="container mt-3" style= "letter-spacing:0.1em">
                 <div class="d-flex ">
-                    <img src=data:image/png;base64,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
-                    Vn2JcU6dBBwVBdJ2MnI5hx+aKpfUcFw7AwTJ5f6ifqfGpOTWcNHcCcuFLapTpYRUWl5wq6yR8FXc2jOSoNhq7vgZlh4PoO2BFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/xFD/+m+4X/C8aeGQJJLlwAAAABJRU5ErkJggg==" alt="John Doe"
+                    <img src="https://www.clipartmax.com/png/full/255-2556971_computer-icons-user-management-clip-art-default-profile-picture-green.png" alt="image"
                     class=" me-3  rounded-circle" style="width:60px;height:60px;">
                         <div>
                               <p style= "line-height:1.5px"> comment by:  ' . $row2['username'] . '
                  <small class = "text-muted" style="margin-left:10px">' . $time_date . '</small></p>
                              <p>' . $comment_content . '</p>';
 
-                            //Logic to put conditions on Comments
-                            if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']){
-                                if($comment_userid == $_SESSION['uid']){
-                                    echo '<a class= "text-dark" style= "text-decoration:none" href= "./view/delete.php?comdelid='.$comment_id.'" ><i style = "margin: auto 30px;" class="far fa-trash-alt"></i></a>
-                                    <a class= "text-dark" style= "text-decoration:none" href= "./view/update.php?update_comid='.$comment_id.'"></i><i style = "margin: auto 30px" class="far fa-edit"> </i></a>';
-                                }      
-                            }
-                            
-                             
-                 echo '</div>
+    //Logic to put conditions on Comments
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+        if ($comment_userid == $_SESSION['uid']) {
+            echo '<a class= "text-dark" style= "text-decoration:none" href= "./view/delete.php?comdelid=' . $comment_id . '" ><i style = "margin: auto 30px;" class="far fa-trash-alt"></i></a>
+                                    <a class= "text-dark" style= "text-decoration:none" href= "./view/update.php?update_comid=' . $comment_id . '"></i><i style = "margin: auto 30px" class="far fa-edit"> </i></a>';
+        }
+    }
+
+    echo '</div>
                 </div>
             </div> ';
 }
