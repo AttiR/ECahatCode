@@ -1,77 +1,87 @@
-< <?php
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EchatCode</title>
+</head>
+
+<?php
 include './config/dbcon.php';
 ?> <header><?php include './view/header.php'?></header>
 
-    <!-- INTRO SECTION -->
-    <section class="intro-section">
+<!-- INTRO SECTION -->
+<section class="intro-section">
 
-        <div class="container intro-content">
-            <div class="intro-text">
-                <h1 class="u-mb-small"> <span class="first-span">Welcome to ChatCodeE</span>
-                    For
-                    <span class="second-span"></span>
-                </h1>
-                <p class="u-mb-large text-white">
-                    Sahre your Ideas, ask questions and helps the community to grow. There are different coding
-                    categories to explore:
-                    Python, JavaScript, PHP .....
-                </p>
+    <div class="container intro-content">
+        <div class="intro-text">
+            <h1 class="u-mb-small"> <span class="first-span">Welcome to ChatCodeE</span>
+                For
+                <span class="second-span"></span>
+            </h1>
+            <p class="u-mb-large text-white">
+                Sahre your Ideas, ask questions and helps the community to grow. There are different coding
+                categories to explore:
+                Python, JavaScript, PHP .....
+            </p>
 
+        </div>
+    </div>
+
+    <div class="video-container">
+        <div class="video-overlay"></div>
+        <video autoplay loop muted>
+            <source src="./view/images/Design-large.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+<!--------------Features --------------->
+
+<section style="margin-top:4rem; padding:0" id="features">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="feature-box col-lg-4 ">
+                <i class="icon fas fa-check-circle fa-4x"></i>
+                <h3 class="feature-title">Helping community</h3>
+                <p>Share up to date information, ask questions and help others with queries.</p>
+            </div>
+
+            <div class="feature-box col-lg-4">
+                <i class="icon far fa-file-code fa-4x"></i>
+                <h3 class=" feature-title">Web development</h3>
+                <p>Ask, share and guide others, Full-stack Web- development.</p>
+            </div>
+
+            <div class="feature-box col-lg-4">
+                <i class="icon fas fa-database fa-4x"></i>
+                <h3 class="feature-title">Database information & queries.</h3>
+                <p>Mongodb, MySql, information, queries and solutions.</p>
             </div>
         </div>
 
-        <div class="video-container">
-            <div class="video-overlay"></div>
-            <video autoplay loop muted>
-                <source src="./view/images/Design-large.mp4" type="video/mp4">
-            </video>
-        </div>
-    </section>
 
-    <!--------------Features --------------->
-
-    <section style="margin-top:4rem; padding:0" id="features">
-
-        <div class="container">
-
-            <div class="row">
-                <div class="feature-box col-lg-4">
-                    <i class="icon fas fa-check-circle fa-4x text-center"></i>
-                    <h3 class="feature-title">Helping community</h3>
-                    <p>Share up to date information, ask questions and help others with queries.</p>
-                </div>
-
-                <div class="feature-box col-lg-4">
-                    <i class="icon far fa-file-code fa-4x"></i>
-                    <h3 class="feature-title">Web development</h3>
-                    <p>Ask, share and guide others, Full-stack Web- development.</p>
-                </div>
-
-                <div class="feature-box col-lg-4">
-                    <i class="icon fas fa-database fa-4x"></i>
-                    <h3 class="feature-title">Database information & queries.</h3>
-                    <p>Mongodb, MySql, information, queries and solutions.</p>
-                </div>
-            </div>
+    </div>
 
 
-        </div>
+</section>
 
 
-    </section>
+<!-- Categories -->
 
 
-    <!-- Categories -->
+<h2 class="text-center " style="color:#e87c1e;margin:4rem auto">Explore Web-Coding Categories</h2>
 
+<div class="container" style="margin-bottom: 4rem;">
+    <div class=" row ">
 
-    <h2 class="text-center " style="color:#e87c1e;margin:4rem auto">Explore Web-Coding Categories</h2>
+        <!-- Fetch Gategories form Database-->
 
-    <div class="container" style="margin-bottom: 4rem;">
-        <div class=" row ">
-
-            <!-- Fetch Gategories form Database-->
-
-            <?php
+        <?php
 $sql = "SELECT * FROM `code_categories`";
 $query = mysqli_query($connect, $sql);
 // while loop to ftech all categories
@@ -100,8 +110,8 @@ $result = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mys
 
 ?>
 
-        </div>
     </div>
+</div>
 
 
-    <?php include 'view/footer.php'?>
+<?php include 'view/footer.php'?>
