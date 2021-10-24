@@ -392,8 +392,6 @@ button {
 
 .card-prof {
   width: 700px;
-  background-color: rgba(231, 231, 241, 0.5);
-  border-bottom: 3px solid orange;
   cursor: pointer;
   transition: all 0.5s;
   margin: 5rem auto;
@@ -413,6 +411,7 @@ button {
 }
 .card2 {
   width: 100%;
+  
 }
 
 .probtn {
