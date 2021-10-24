@@ -43,7 +43,7 @@ while ($row = mysqli_fetch_assoc($query)) {
     $row2 = mysqli_fetch_assoc($query2);
     echo '
     <!-- Jumbotron Bootsrap 5  for the particular thread id intro and lead-->
-    <div class="container text-center" style="width: 80%; margin-top:5rem; width:80%; letter-spacing:0.1em">
+    <div class="container text-center" style="margin-top:5rem; letter-spacing:0.1em">
             <div class=" p-5 rounded-lg m-3 thread-intro">
                 <h1 class="my-4" style= "letter-spacing:0.1em">' . $threadtitle . '
                 </h1>
@@ -53,7 +53,7 @@ while ($row = mysqli_fetch_assoc($query)) {
                 <!-- displaying data dynamicaaly -->
                 <hr class="my-4">
                 <p >
-                     Do not cross post questions. Remain respectful of other members at all times.
+                    This is coding chat forum, remain respectful of other members to all times.
                 </p>
                 <p>Posted by: <small>' . $row2['username'] . '</small></p>
 
@@ -101,7 +101,7 @@ if ($method == "POST") {
     <!-- Form to get comments from users-->
 
 
-    <div class="container" style="width: 80%;">
+    <div class="container">
         <h2 style="margin: 4rem auto 4rem 1.5rem; letter-spacing:0.1em">Start Comments on the Thread
         </h2>
 
@@ -141,7 +141,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) { // restricting for 
 
 
     <!------------------ fetch Data from Comments table------------------------->
-    <div class="container" style="width:80%; margin-bottom:4rem">
+    <div class="container" style="margin-bottom:4rem">
         <h2 style="margin:4rem auto 4rem 1.5rem;letter-spacing:0.1em">Comments</h2>
         <!-- thread id from url-->
         <?php

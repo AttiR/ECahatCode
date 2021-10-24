@@ -48,7 +48,7 @@ if(isset($_GET['update_thid'])){
 
 
     <div class="user-form">
-        <h2 class="text-center" style="color: orange;margin-top:5rem">Update your Thread</h2>
+        <h2 class="text-center" style="color: orange; margin-top:5rem; margin-bottom:0">Update your Thread</h2>
         <div class="vertical-center">
             <div class="enter-form">
                 <form action="" method="post">
@@ -100,7 +100,7 @@ $id = $row['code_thread_id'];
 
 ?>
 
-    <h2 class="text-center my-4" style="color: orange;">Update Your Comment</h2>
+    <h2 class="text-center" style="color: orange; margin-top:5rem; margin-bottom:0">Update Your Comment</h2>
     <div class="user-form">
         <div class="vertical-center">
             <div class="enter-form">

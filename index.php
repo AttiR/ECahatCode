@@ -40,35 +40,35 @@ include './config/dbcon.php';
 
 <!--------------Features --------------->
 
-<section style="margin-top:4rem; padding:0" id="features">
 
-    <div class="container">
 
-        <div class="row">
-            <div class="feature-box col-lg-4 ">
-                <i class="icon fas fa-check-circle fa-4x"></i>
-                <h3 class="feature-title">Helping community</h3>
-                <p>Share up to date information, ask questions and help others with queries.</p>
-            </div>
+<div class="container" style="margin-top:5rem">
 
-            <div class="feature-box col-lg-4">
-                <i class="icon far fa-file-code fa-4x"></i>
-                <h3 class=" feature-title">Web development</h3>
-                <p>Ask, share and guide others, Full-stack Web- development.</p>
-            </div>
-
-            <div class="feature-box col-lg-4">
-                <i class="icon fas fa-database fa-4x"></i>
-                <h3 class="feature-title">Database information & queries.</h3>
-                <p>Mongodb, MySql, information, queries and solutions.</p>
-            </div>
+    <div class="row">
+        <div class="feature-box col-lg-4 ">
+            <i class="icon fas fa-check-circle fa-4x"></i>
+            <h3 class="feature-title">Helping community</h3>
+            <p>Share up to date information, ask questions and help others with queries.</p>
         </div>
 
+        <div class="feature-box col-lg-4">
+            <i class="icon far fa-file-code fa-4x"></i>
+            <h3 class=" feature-title">Web development</h3>
+            <p>Ask, share and guide others, Full-stack Web- development.</p>
+        </div>
 
+        <div class="feature-box col-lg-4">
+            <i class="icon fas fa-database fa-4x"></i>
+            <h3 class="feature-title">Database information & queries.</h3>
+            <p>Mongodb, MySql, information, queries and solutions.</p>
+        </div>
     </div>
 
 
-</section>
+</div>
+
+
+
 
 
 <!-- Categories -->

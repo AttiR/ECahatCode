@@ -36,7 +36,7 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
 
 
     <!-- Jumbotron Bootsrap 5  for category intro and lead-->
-    <div class="container" style="width: 80%; margin-top:5rem">
+    <div class="container" style=" margin-top:5rem">
         <div class="p-5 rounded-lg m-4 thread-intro">
             <h1 class=" text-center my-4" style="letter-spacing: 0.1em;">
                 Lets Disscuss <?php echo $categoryname ?> </h1>
@@ -46,7 +46,7 @@ $row = $connect->query($sql) or die('insert failed<br>' . $sql . '<br>' . mysqli
             <!-- displaying data dynamicaaly -->
             <hr class="my-4">
             <p style="letter-spacing: 0.1em;">This is a Code chat forum.
-                Do not cross post questions, remain respectful of other members at all times.<em>Lets help each
+                Remain respectful to other members at all times.<em>Lets help each
                     others.</em>
             </p>
             <center> <a style="background:orange; color:#fff;margin-top:2rem;letter-spacing: 0.1em;" class="btn btn-lg"
@@ -88,7 +88,7 @@ if ($method == "POST") {
     <!-- User Questions, Ideas, tech information--->
     <!------------- form for getting the questions and information from the users-------------------->
 
-    <div class="container" style="width:80%">
+    <div class="container">
         <h2 style="margin:4rem auto 4rem 1.5rem">Start New Conversation</h2>
         <?php
 if ($insert == true) {
@@ -130,7 +130,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     <!-- User Questions, Ideas, tech information--->
     <!-----Fetching data from coding-threads and dispalyed in Media object---->
 
-    <div class="container" style="width: 80%; margin-bottom:5rem">
+    <div class="container" style="margin-bottom:5rem">
         <h2 style="margin:4rem auto 4rem 1.5rem;line-height:1.5px; letter-spacing:0.1em">Browse Threads</h2>
 
         <?php
@@ -181,13 +181,13 @@ if (isset($_GET['categryid'])) {
         /// Logic for icons, subject them to login or random users.
         if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
             if ($thread_userid == $_SESSION['uid']) {
-                echo '<a  style= "text-decoration: none; margin-right: 30px" href= "thread-detail.php?threadid= ' . $id . '">Comment<a/>
+                echo '<a class="text-dark" style= "text-decoration: none; margin-right: 30px" href= "thread-detail.php?threadid= ' . $id . '"><i class="far fa-comment"></i><a/>
                 <a class= text-dark href= "./view/delete.php?delid=' . $id . '"><i style = "margin: auto 30px;" class="far fa-trash-alt"></i></a>
                 <a class= "text-dark" style= "textdecoration:none" href="./view/update.php?update_thid=' . $id . '">
                 <i style = "margin: auto 30px" class="far fa-edit"> </i></a>';
             } else {
                 echo '
-                <a  style= "text-decoration: none; margin-right:30px" href= "thread-detail.php?threadid= ' . $id . '">Comment</a>';
+                <a class="text-dark" style= "text-decoration: none; margin-right:30px" href= "thread-detail.php?threadid= ' . $id . '"><i class="far fa-comment"></i></a>';
             }
 
         }
