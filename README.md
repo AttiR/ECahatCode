@@ -3,6 +3,8 @@
 EchatCode is web coding disscussion forum, where one can share, ask questions and also comments on others problems.
 User can ask/start the thread or comment only after he registration and Securely login.
 
+Live Website Running on Azure: [Azure](https://attir.azurewebsites.net/).
+
 ## Objectives
 -	A Dynamic Website using HTML, CSS, JavaScript, PHP, and MySQL.
 -	Responsive Web Design.
@@ -14,5 +16,8 @@ User can ask/start the thread or comment only after he registration and Securely
 -	Secure Website and Public pages.
 -	Version Control.
 -	Deployment on Azure.
+
+## Process
+
 
 
