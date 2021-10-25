@@ -24,8 +24,8 @@ Live Website Running on Azure: [Azure](https://attir.azurewebsites.net/).
 - Semantic HTML 5, CSS, Bootsrap 5.
 - PHP 7.4
 - MySQL 
-- [XAMP]()-for local development.
-- [Github]()-Version Control.
+- [XAMP](https://www.apachefriends.org/index.html)-for local development.
+- [Github](https://github.com/AttiR/ECahatCode)-Version Control.
 
 ### Deployed
 
