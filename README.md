@@ -31,6 +31,15 @@ Live Website Running on Azure: [Azure](https://attir.azurewebsites.net/).
 
 [Azure](https://attir.azurewebsites.net/)- Cloud Plateform.
 
+### What I have Learned
+
+- Backend User Management System with PHP
+  - User Registartion with Email Verification (PHP MAILER).
+  - Secure Login system.
+  -  Passwrod Reset System.
+- MySQl CRUD Operation.
+- Web Deployemnt, Azure Cloud Plateform.
+
 
 
 
