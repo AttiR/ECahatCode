@@ -21,5 +21,16 @@ Live Website Running on Azure: [Azure](https://attir.azurewebsites.net/).
 
 ### Buit with
 
+- Semantic HTML 5, CSS, Bootsrap 5.
+- PHP 7.4
+- MySQL 
+- [XAMP]()-for local development.
+- [Github]()-Version Control.
+
+### Deployed
+
+[Azure](https://attir.azurewebsites.net/)- Cloud Plateform.
+
+
 
 
