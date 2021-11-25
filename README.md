@@ -19,7 +19,7 @@ Live Website Running on Azure: [Azure](https://attir.azurewebsites.net/).
 
 ## My Process
 
-### Buit with
+### Built with
 
 - Semantic HTML 5, CSS, Bootsrap 5.
 - PHP 7.4
