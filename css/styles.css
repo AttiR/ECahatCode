@@ -146,8 +146,6 @@ span {
   position: relative;
 }
 
-
-
 .feature-title {
   font-size: 1.5rem;
 }
@@ -579,5 +577,9 @@ hr .new1 {
   .contact-information {
     margin-left: 0;
   }
- 
+}
+@media screen and(max-width:560px) {
+  .enter-form {
+    max-width: 90%;
+  }
 }
