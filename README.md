@@ -3,7 +3,7 @@
 EchatCode is web coding disscussion forum, where one can share, ask questions and also comments on others problems.
 User can ask/start the thread or comment only after he registration and Securely login.
 
-Live Website Running on Azure: [Azure](https://attir.azurewebsites.net/).
+Live Website Running on Azure: (https://attir.azurewebsites.net/).
 
 ## How to run Locally
 
