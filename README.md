@@ -5,6 +5,10 @@ User can ask/start the thread or comment only after he registration and Securely
 
 Live Website Running on Azure: [Azure](https://attir.azurewebsites.net/).
 
+## How to run Locally
+
+clone respository and run with XAMPP, for database connect with PhpMyadmin.
+
 ## Objectives
 -	A Dynamic Website using HTML, CSS, JavaScript, PHP, and MySQL.
 -	Responsive Web Design.
